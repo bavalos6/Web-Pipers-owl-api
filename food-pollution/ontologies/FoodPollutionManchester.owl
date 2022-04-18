@@ -1,0 +1,150 @@
+Prefix: : <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#>
+Prefix: FoodPollution: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+
+Ontology: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution>
+
+
+Datatype: xsd:positiveInteger
+
+    
+ObjectProperty: FoodPollution:isBased
+
+    Domain: 
+        FoodPollution:Meal
+    
+    Range: 
+        <http://dbpedia.org/ontology/Food>
+    
+    
+ObjectProperty: FoodPollution:isMeatBased
+
+    SubPropertyOf: 
+        FoodPollution:isBased
+    
+    Domain: 
+        FoodPollution:Meal
+    
+    Range: 
+        FoodPollution:meat
+    
+    
+ObjectProperty: FoodPollution:isPlantBased
+
+    SubPropertyOf: 
+        FoodPollution:isBased
+    
+    Domain: 
+        FoodPollution:Meal
+    
+    Range: 
+        FoodPollution:vegan
+    
+    
+DataProperty: FoodPollution:CO2perGram
+
+    Domain: 
+        <http://dbpedia.org/ontology/Food>
+    
+    Range: 
+        xsd:positiveInteger
+    
+    
+DataProperty: FoodPollution:GramsOfProtein
+
+    Domain: 
+        FoodPollution:Meal
+    
+    Range: 
+        xsd:positiveInteger
+    
+    
+Class: <http://dbpedia.org/ontology/Food>
+
+    
+Class: FoodPollution:Meal
+
+    
+Class: FoodPollution:Question1
+
+    EquivalentTo: 
+        FoodPollution:meat
+    
+    
+Class: FoodPollution:Question2
+
+    EquivalentTo: 
+        FoodPollution:vegan
+    
+    
+Class: FoodPollution:meat
+
+    EquivalentTo: 
+        FoodPollution:Question1
+    
+    SubClassOf: 
+        <http://dbpedia.org/ontology/Food>
+    
+    
+Class: FoodPollution:vegan
+
+    EquivalentTo: 
+        FoodPollution:Question2
+    
+    SubClassOf: 
+        <http://dbpedia.org/ontology/Food>
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#WHOPPER_w/_Cheese>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "33"^^xsd:positiveInteger
+    
+    
+Individual: FoodPollution:BK_Veggie_Burger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isPlantBased  FoodPollution:Tofu
+    
+    
+Individual: FoodPollution:Beef
+
+    Types: 
+        FoodPollution:meat
+    
+    Facts:  
+     FoodPollution:CO2perGram  "59"^^xsd:positiveInteger
+    
+    
+Individual: FoodPollution:BigMac
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "25"^^xsd:positiveInteger
+    
+    
+Individual: FoodPollution:Tofu
+
+    Types: 
+        FoodPollution:vegan
+    
+    Facts:  
+     FoodPollution:CO2perGram  "3"^^xsd:positiveInteger
+    
+    
