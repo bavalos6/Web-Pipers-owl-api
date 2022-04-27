@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#"
+     xml:base="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:FoodPollution="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#isBased -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#isBased">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#Meal"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Food"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#isMeatBased -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#isMeatBased">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#isBased"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#Meal"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#meat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#isPlantBased -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#isPlantBased">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#isBased"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#Meal"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#vegan"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#CO2perGram -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#CO2perGram">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Food"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#GramsOfProtein -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#GramsOfProtein">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#Meal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/Food -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Food"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#Meal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#Meal"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#Question1 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#Question1">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#meat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#Question2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#Question2">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#vegan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#meat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#meat">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Food"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#vegan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#vegan">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Food"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#BK_Veggie_Burger -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#BK_Veggie_Burger">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#Meal"/>
+        <isPlantBased rdf:resource="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#Tofu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#Beef -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#Beef">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#meat"/>
+        <CO2perGram rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">59</CO2perGram>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#BigMac -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#BigMac">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#Meal"/>
+        <isMeatBased rdf:resource="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#Beef"/>
+        <GramsOfProtein rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">25</GramsOfProtein>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#Tofu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#Tofu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#vegan"/>
+        <CO2perGram rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">3</CO2perGram>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#WHOPPER_w/_Cheese -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#WHOPPER_w/_Cheese">
+        <rdf:type rdf:resource="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#Meal"/>
+        <isMeatBased rdf:resource="http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#Beef"/>
+        <GramsOfProtein rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">33</GramsOfProtein>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
