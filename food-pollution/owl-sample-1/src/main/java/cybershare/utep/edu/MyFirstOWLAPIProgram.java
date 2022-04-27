@@ -84,8 +84,11 @@ public class MyFirstOWLAPIProgram
             scanner.nextLine();
             while(scanner.hasNextLine()){
                 try{
-                    String[] line = scanner.nextLine().split(",");
-                    String meal = line[1];
+                    String[] line       = scanner.nextLine().split(",");
+                    String meal         = line[1];
+                    String restaurant   = line[0];
+                    Double calories     = Double.parseDouble(line[2]);
+
                     double protein = Double.parseDouble(line[12]);
                     meal = meal.replaceAll("[^a-zA-Z0-9]","");
                     addClassIndividual(ontology, manager, dataFactory, meal, "Meal");
@@ -106,6 +109,9 @@ public class MyFirstOWLAPIProgram
                         addObjectPropertyAssertion(ontology, manager, dataFactory, meal, "Beef", "isMeatBased");
                         addDataPropertyAssertion(ontology, manager, dataFactory, meal, protein, "GramsOfProtein");
                     }
+
+                    addDataPropertyAssertion(ontology, manager, dataFactory, meal, restaurant, "isFromRestaurant");
+                    addDataPropertyAssertion(ontology, manager, dataFactory, meal, calories, "hasCalories");
                 } catch(NumberFormatException e){
 
                 }
@@ -219,6 +225,23 @@ public class MyFirstOWLAPIProgram
         OWLAxiom assertion = dataFactory.getOWLDataPropertyAssertionAxiom(o, i1, individual_2);
         manager.addAxiom(ontology, assertion);
     }
+
+    /**
+    * Add object property assertion (between individuals)
+    * @param ontology
+    * @param manager
+    * @param dataFactory
+    * @param individual_1
+    * @param individual_2
+    * @param property
+    */
+   public static void addDataPropertyAssertion(OWLOntology ontology, OWLOntologyManager manager, OWLDataFactory dataFactory, String individual_1, String individual_2, String property){
+       OWLIndividual i1 = dataFactory.getOWLNamedIndividual(IRI.create(BASE + "#" + individual_1));
+       OWLDataProperty o = dataFactory.getOWLDataProperty(IRI.create(BASE + "#" + property));
+
+       OWLAxiom assertion = dataFactory.getOWLDataPropertyAssertionAxiom(o, i1, individual_2);
+       manager.addAxiom(ontology, assertion);
+   }
 
 
     /**
