@@ -35,12 +35,12 @@ import java.util.Scanner;
  */
 public class MyFirstOWLAPIProgram 
 {
-    private static final String FOOD_POLLUTION = "C:/Users/alexa/Documents/UTEP/2022 Spring/Web Bases/food-pollution-owl-api/food-pollution/ontologies/FoodPollutionManchester.owl";
-    private static final String FOOD_POLLUTION_NEW = "C:/Users/alexa/Documents/UTEP/2022 Spring/Web Bases/food-pollution-owl-api/food-pollution/ontologies/FoodPollutionNew.owl";
+    private static final String FOOD_POLLUTION = "/Users/greywind/Desktop/Utep/Spring_2022/data_science/project/food-pollution-owl-api/food-pollution/ontologies/FoodPollution.owl";
+    private static final String FOOD_POLLUTION_NEW = "/Users/greywind/Desktop/Utep/Spring_2022/data_science/project/food-pollution-owl-api/food-pollution/ontologies/FoodPollutionNew.owl";
     private static final String BASE = "http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution";
 
-    private static final String FASTFOOD_DATA = "C:/Users/alexa/Documents/UTEP/2022 Spring/Web Bases/food-pollution-owl-api/food-pollution/owl-sample-1/data/fastfood.csv";
-    private static final String EMISSIONS_DATA = "C:/Users/alexa/Documents/UTEP/2022 Spring/Web Bases/food-pollution-owl-api/food-pollution/owl-sample-1/data/ghg_emissions_by_life_cycle_stage_ourworldindata_upload.csv";
+    private static final String FASTFOOD_DATA = "/Users/greywind/Desktop/Utep/Spring_2022/data_science/project/food-pollution-owl-api/food-pollution/owl-sample-1/data/fastfood.csv";
+    private static final String EMISSIONS_DATA = "/Users/greywind/Desktop/Utep/Spring_2022/data_science/project/food-pollution-owl-api/food-pollution/owl-sample-1/data/ghg_emissions_by_life_cycle_stage_ourworldindata_upload.csv";
 
     public static void main( String[] args )
     {
@@ -118,8 +118,16 @@ public class MyFirstOWLAPIProgram
 
             Set<OWLNamedIndividual> meals = DLQueryEngine.getInstances("Meal", ontology);
 
+            //OWLDataPropertyAssertionAxiom assertion; 
             for (OWLNamedIndividual meal : meals){
-                System.out.println(meal);
+                System.out.println("------------------");
+                //System.out.println(meal.getSignature());
+                ontology.getDataPropertyAssertionAxioms(meal).stream().forEach(x -> System.out.println(x.getObject().getLiteral()));
+                //meal.dataPropertiesInSignature().forEach(x-> System.out.println(x));
+                //ontology.getDataPropertyAssertionAxioms(meal).stream().forEach(x -> System.out.println(meal.getDataPropertiesInSignature()));
+
+                //System.out.println(meal.getDataPr);
+                
             }
 
         } catch (OWLOntologyCreationException | OWLOntologyStorageException | IOException e) {
@@ -182,6 +190,7 @@ public class MyFirstOWLAPIProgram
         OWLIndividual subject = dataFactory.getOWLNamedIndividual(IRI.create(BASE + "#" + subjectName));
         OWLClass someClass = dataFactory.getOWLClass(IRI.create(BASE + "#" + className));
         OWLClassAssertionAxiom ax = dataFactory.getOWLClassAssertionAxiom(someClass, subject);
+        System.out.println(ax.toString());
         manager.addAxiom(ontology, ax);
     }
 
