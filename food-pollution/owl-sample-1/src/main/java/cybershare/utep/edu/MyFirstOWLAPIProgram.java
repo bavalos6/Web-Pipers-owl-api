@@ -17,8 +17,10 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
+import org.semanticweb.owlapi.model.OWLNamedIndividual;
 
 import java.io.*;
+import java.util.*;
 import java.util.Scanner;
 
 /**
@@ -33,12 +35,8 @@ import java.util.Scanner;
  */
 public class MyFirstOWLAPIProgram 
 {
-
-    private static final String PEOPLE_IRI = "http://owl.man.ac.uk/2006/07/sssw/people.owl";
-    private static final String PEOPLE_AND_PETS = "C:/Users/alexa/Documents/UTEP/2022 Spring/Web Bases/owl-samples-master/ontologies/PeopleAndPets2.owl";
     private static final String FOOD_POLLUTION = "C:/Users/alexa/Documents/UTEP/2022 Spring/Web Bases/food-pollution-owl-api/food-pollution/ontologies/FoodPollutionManchester.owl";
     private static final String FOOD_POLLUTION_NEW = "C:/Users/alexa/Documents/UTEP/2022 Spring/Web Bases/food-pollution-owl-api/food-pollution/ontologies/FoodPollutionNew.owl";
-    private static final String PET_TAXONOMY = "C:/Users/alexa/Documents/UTEP/2022 Spring/Web Bases/owl-samples-master/ontologies/pet-ncbi-taxonomy.owl";
     private static final String BASE = "http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution";
 
     private static final String FASTFOOD_DATA = "C:/Users/alexa/Documents/UTEP/2022 Spring/Web Bases/food-pollution-owl-api/food-pollution/owl-sample-1/data/fastfood.csv";
@@ -117,11 +115,18 @@ public class MyFirstOWLAPIProgram
             scanner.close();
 
             saveOntology(FOOD_POLLUTION_NEW, manager, ontology);
+
+            Set<OWLNamedIndividual> meals = DLQueryEngine.getInstances("Meal", ontology);
+
+            for (OWLNamedIndividual meal : meals){
+                System.out.println(meal);
+            }
+
         } catch (OWLOntologyCreationException | OWLOntologyStorageException | IOException e) {
             e.printStackTrace();
         }
-    }
 
+    }
 
     /**
      * Creates a new ontology manager
