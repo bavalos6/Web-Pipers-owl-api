@@ -7,6 +7,7 @@ import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import java.io.File;
 import java.io.IOException;
 
+import org.semanticweb.HermiT.Reasoner;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLAxiom;
@@ -26,79 +27,58 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import java.util.*;
 import java.util.Scanner;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class Meals {
     String RESTURANT = "<http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#isFromRestaurant>";
     String CALORIES = "<http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#isFromRestaurant>";
-    String PROTEIN = "<http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#GramsOfProtein>"; 
+    String PROTEIN = "<http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#GramsOfProtein>";
     private ArrayList<Meal> meals;
 
     public Meals() {
         this.meals = new ArrayList<Meal>();
         this.meals.add(new Meal());
         this.meals.add(new Meal());
-        this.meals.add(new Meal()); 
+        this.meals.add(new Meal());
     }
 
-    public Meals(Set<OWLNamedIndividual> meals, OWLOntology ontology) {
+    public Meals(Set<OWLNamedIndividual> meals, OWLOntology ontology, OWLDataFactory dataFactory, Reasoner reasoner) {
         System.out.println(meals);
         this.meals = new ArrayList<Meal>();
-        OWLReasoner reasoner = DLQueryEngine.createReasoner(ontology);
-        ArrayList<HashMap<String, String>> values = new ArrayList<>();
-
         for (OWLNamedIndividual meal : meals) {
-            HashMap<String, String> map = new HashMap<>();
             Meal m = new Meal();
-            m.setName(getNameFromOntology(meal.toString()));
-
-            ontology.getDataPropertyAssertionAxioms(meal)
-                .forEach(
-                    property -> map.put(property.getProperty().toString(), 
-                                            property.getObject().getLiteral()));
-
-            ArrayList<String> nodes = new ArrayList<>();
-            ArrayList<String> nodeCO2 = new ArrayList<>();
-            ontology.getObjectPropertiesInSignature()
-                .stream()
-                .forEach(property -> 
-                    reasoner.getObjectPropertyValues(meal, property)
-                        .getNodes()
-                        .stream()
-                        .forEach(node -> 
-                            nodes.add(node.getRepresentativeElement().toString())));
-
-            ontology.getObjectPropertiesInSignature()
-                .stream()
-                .forEach(property -> 
-                    reasoner.getObjectPropertyValues(meal, property)
-                        .getNodes()
-                        .stream()
-                        .forEach(node -> 
-                            ontology
-                                .getDataPropertyAssertionAxioms(
-                                    node.getRepresentativeElement())
-                                    .stream()
-                                    .forEach(
-                                        co2Property -> nodeCO2
-                                            .add(co2Property
-                                                .getObject().getLiteral()))));
-            
-            
-            m.setCalories(map.get(RESTURANT));
-            m.setProtein(map.get(CALORIES));
-            m.setRestaurant(map.get(PROTEIN));
-            m.setType(getNameFromOntology(nodes.get(0)));
-            m.setPollution(nodeCO2.get(0));
+            try { 
+                List<OWLNamedIndividual> foods = reasoner
+                        .getObjectPropertyValues(meal, Util.getObjectProperty(dataFactory, Util.IS_BASED)).entities()
+                        .collect(Collectors.toList());
+                m.setName(Util.getNameFromOntology(meal.toString()));
+                m.setType(Util.getNameFromOntology(foods.get(0).toString()));
+                m.setPollution(reasoner
+                        .getDataPropertyValues(foods.get(0), Util.getDataProperty(dataFactory, Util.CO2_PER_GRAM))
+                        .stream().collect(Collectors.toList()).get(0).getLiteral());
+                m.setRestaurant(
+                        reasoner.getDataPropertyValues(meal, Util.getDataProperty(dataFactory, Util.IS_FROM_RESTURANT))
+                                .stream().collect(Collectors.toList()).get(0).getLiteral());
+                m.setCalories(reasoner.getDataPropertyValues(meal, Util.getDataProperty(dataFactory, Util.HAS_CALORIES))
+                        .stream().collect(Collectors.toList()).get(0).getLiteral());
+                m.setProtein(
+                        reasoner.getDataPropertyValues(meal, Util.getDataProperty(dataFactory, Util.GRAMS_OF_PROTEIN))
+                                .stream().collect(Collectors.toList()).get(0).getLiteral());
+            } catch (Exception e) {
+                System.out.println(Util.getNameFromOntology(meal.toString()) + " not configured properly!");
+                e.printStackTrace();
+            }
             this.meals.add(m);
-
         }
     }
 
     public ArrayList<Meal> getMeals() {
-        return meals; 
+        return meals;
     }
 
     public static String getNameFromOntology(String ontologyName) {
-        return ontologyName.substring(ontologyName.toString().indexOf("#")+1, ontologyName.toString().indexOf(">")); 
+        return ontologyName.substring(ontologyName.toString().indexOf("#") + 1, ontologyName.toString().indexOf(">"));
     }
+
 }

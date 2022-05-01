@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.File;
 import java.io.IOException;
 
+import org.semanticweb.HermiT.Configuration;
+import org.semanticweb.HermiT.Reasoner;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLAxiom;
@@ -21,56 +23,42 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
+import org.semanticweb.owlapi.reasoner.ConsoleProgressMonitor;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import java.util.*;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 @RestController
 public class MealController {
-	private static final String FOOD_POLLUTION_NEW = "/Users/greywind/Desktop/Utep/Spring_2022/data_science/project/food-pollution-owl-api/food-pollution/ontologies/FoodPollutionNew.owl";
+    private static final String FOOD_POLLUTION_NEW = "/Users/greywind/Desktop/Utep/Spring_2022/data_science/project/food-pollution-owl-api/food-pollution/ontologies/FoodPollutionNew.owl";
     private static final String BASE = "http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution";
 
-	OWLOntology owlOntology;
+    OWLOntology owlOntology;
+    Reasoner reasoner;
+    OWLDataFactory dataFactory;;
 
-	public MealController() {
-		OWLOntologyManager manager = createManager();
-		try {
-			this.owlOntology = loadOntologyFromFile(FOOD_POLLUTION_NEW, manager);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	@GetMapping("/meals")
-	public Meals index(@RequestParam(value = "query", defaultValue = "Meal") String query) {
-
-		return new Meals(DLQueryEngine.getInstances(query, this.owlOntology), this.owlOntology);
-	}
-
-	public static String getNameFromOntology(String ontologyName) {
-        return ontologyName.substring(ontologyName.toString().indexOf("#")+1, ontologyName.toString().indexOf(">")); 
+    public MealController() {
+        OWLOntologyManager manager = Util.createManager();
+        try {
+            this.owlOntology = Util.loadOntologyFromFile(FOOD_POLLUTION_NEW, manager);
+            Configuration configuration = new Configuration();
+            configuration.reasonerProgressMonitor = new ConsoleProgressMonitor();
+            this.reasoner = new Reasoner(configuration, this.owlOntology);
+            this.dataFactory = manager.getOWLDataFactory();
+            System.out.println("Ontology Settings Succesfully loaded");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-	public static OWLOntology loadOntologyFromFile(String path, OWLOntologyManager manager) throws OWLOntologyCreationException {
-        File file = new File(path);
-        // Load local ontology
-        OWLOntology ontology = manager.loadOntologyFromOntologyDocument(file);
-        System.out.println("Loaded ontology: " + ontology);
-        // We can always obtain the location where an ontology was loaded from
-        IRI documentIRI = manager.getOntologyDocumentIRI(ontology);
-        System.out.println("    from: " + documentIRI);
-        return ontology;
-    }
+    @GetMapping("/meals")
+    public Meals index(@RequestParam(value = "query", defaultValue = "Meal") String query) {
 
-	/**
-     * Creates a new ontology manager
-     * @return
-     */
-    public static OWLOntologyManager createManager(){
-        OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
-        return manager;
+        return new Meals(this.reasoner.getInstances(this.dataFactory.getOWLClass(Util.getExpression(query))).entities()
+                .collect(Collectors.toSet()), this.owlOntology, this.dataFactory, this.reasoner);
     }
 }
