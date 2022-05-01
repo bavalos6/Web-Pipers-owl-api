@@ -192,10 +192,12 @@ public class MyFirstOWLAPIProgram {
             Configuration configuration = new Configuration();
             configuration.reasonerProgressMonitor = new ConsoleProgressMonitor();
 
-            System.out.println("HELHELFHELHFELHFEHFLEHFOEHFOEH");
             Reasoner reasoner = new Reasoner(configuration, ontology);
-            Set<OWLNamedIndividual> meals = reasoner.getInstances(dataFactory.getOWLClass(getExpression("meatBased")))
-                    .entities().collect(Collectors.toSet());
+            OWLClassExpression value = dataFactory.getOWLClass(getExpression("foodQuery")); 
+            System.out.println("Class value looks like this: ");
+            System.out.println(value.toString());
+            Set<OWLNamedIndividual> meals = reasoner.getInstances(value).entities().collect(Collectors.toSet());
+            System.out.println(meals);
 
             // OWLDataPropertyAssertionAxiom assertion;
             OWLObjectProperty isBasedProperty = dataFactory.getOWLObjectProperty(IRI.create(BASE + "#" + "isBased"));
@@ -203,32 +205,32 @@ public class MyFirstOWLAPIProgram {
             OWLDataProperty gramsOfProtein = dataFactory.getOWLDataProperty(getExpression("GramsOfProtein"));
             OWLDataProperty hasCalories = dataFactory.getOWLDataProperty(getExpression("hasCalories"));
             OWLDataProperty isFromResturant = dataFactory.getOWLDataProperty(getExpression("isFromRestaurant"));
-            for (OWLNamedIndividual meal : meals) {
-                System.out.println("------------------");
-                System.out.println(getNameFromOntology(meal.toString()));
-                System.out.println("-------------------------------------");
+            // for (OWLNamedIndividual meal : meals) {
+            //     System.out.println("------------------");
+            //     System.out.println(getNameFromOntology(meal.toString()));
+            //     System.out.println("-------------------------------------");
 
-                Set<OWLNamedIndividual> foods = reasoner.getObjectPropertyValues(meal, isBasedProperty).entities()
-                        .collect(Collectors.toSet());
-                for (OWLNamedIndividual food : foods) {
-                    System.out.println("Food: " + food.toString());
-                    System.out.println("Co2:pergram: " + reasoner.getDataPropertyValues(food, co2PerGram).stream()
-                            .collect(Collectors.toList()).get(0).getLiteral());
-                }
-                try {
-                    System.out.println("Is based on: " +
-                            reasoner.getObjectPropertyValues(meal, isBasedProperty).toString());
-                    System.out.println("Protein: " + reasoner.getDataPropertyValues(meal, gramsOfProtein).stream()
-                            .collect(Collectors.toList()).get(0).getLiteral());
-                    System.out.println("Calories: " + reasoner.getDataPropertyValues(meal, hasCalories).stream()
-                            .collect(Collectors.toList()).get(0).getLiteral());
-                    System.out.println("Is From Resturant: " + reasoner.getDataPropertyValues(meal, isFromResturant).stream()
-                            .collect(Collectors.toList()).get(0).getLiteral());
-                } catch (Exception e) {
-                    System.out.println(meal.toString() + " is missing attributes");
-                }
-                System.out.println("----------------------------------");
-            }
+            //     Set<OWLNamedIndividual> foods = reasoner.getObjectPropertyValues(meal, isBasedProperty).entities()
+            //             .collect(Collectors.toSet());
+            //     for (OWLNamedIndividual food : foods) {
+            //         System.out.println("Food: " + food.toString());
+            //         System.out.println("Co2:pergram: " + reasoner.getDataPropertyValues(food, co2PerGram).stream()
+            //                 .collect(Collectors.toList()).get(0).getLiteral());
+            //     }
+            //     try {
+            //         System.out.println("Is based on: " +
+            //                 reasoner.getObjectPropertyValues(meal, isBasedProperty).toString());
+            //         System.out.println("Protein: " + reasoner.getDataPropertyValues(meal, gramsOfProtein).stream()
+            //                 .collect(Collectors.toList()).get(0).getLiteral());
+            //         System.out.println("Calories: " + reasoner.getDataPropertyValues(meal, hasCalories).stream()
+            //                 .collect(Collectors.toList()).get(0).getLiteral());
+            //         System.out.println("Is From Resturant: " + reasoner.getDataPropertyValues(meal, isFromResturant).stream()
+            //                 .collect(Collectors.toList()).get(0).getLiteral());
+            //     } catch (Exception e) {
+            //         System.out.println(meal.toString() + " is missing attributes");
+            //     }
+            //     System.out.println("----------------------------------");
+            // }
 
         } catch (Exception e) {
             e.printStackTrace();

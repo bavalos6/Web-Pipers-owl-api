@@ -1,7 +1,9 @@
 cybershare/utep/edu/Meals.class
-cybershare/utep/edu/MealController.class
 cybershare/utep/edu/Util.class
 cybershare/utep/edu/DLQueryParser.class
+cybershare/utep/edu/FoodPollutionController.class
 cybershare/utep/edu/DLQueryEngine.class
+cybershare/utep/edu/Food.class
 cybershare/utep/edu/Meal.class
 cybershare/utep/edu/MyFirstOWLAPIProgram.class
+cybershare/utep/edu/Foods.class
