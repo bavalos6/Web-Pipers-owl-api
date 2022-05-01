@@ -1,5 +1,6 @@
 Prefix: : <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#>
 Prefix: FoodPollution: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#>
+Prefix: dc: <http://purl.org/dc/elements/1.1/>
 Prefix: owl: <http://www.w3.org/2002/07/owl#>
 Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -56,7 +57,7 @@ DataProperty: FoodPollution:CO2perGram
         <http://dbpedia.org/ontology/Food>
     
     Range: 
-        xsd:positiveInteger
+        xsd:double
     
     
 DataProperty: FoodPollution:GramsOfProtein
@@ -65,7 +66,7 @@ DataProperty: FoodPollution:GramsOfProtein
         FoodPollution:Meal
     
     Range: 
-        xsd:positiveInteger
+        xsd:double
     
     
 Class: <http://dbpedia.org/ontology/Food>
@@ -84,6 +85,16 @@ Class: FoodPollution:Question2
 
     EquivalentTo: 
         FoodPollution:vegan
+    
+    
+Class: FoodPollution:chickenMeal
+
+    EquivalentTo: 
+        FoodPollution:Meal
+         and (FoodPollution:isMeatBased value FoodPollution:PoultryMeat)
+    
+    SubClassOf: 
+        FoodPollution:Meal
     
     
 Class: FoodPollution:meat
@@ -941,7 +952,7 @@ Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#W
     
     Facts:  
      FoodPollution:isMeatBased  FoodPollution:Beef,
-     FoodPollution:GramsOfProtein  "33"^^xsd:positiveInteger
+     FoodPollution:GramsOfProtein  "33.0"^^xsd:double
     
     
 Individual: FoodPollution:AllBeefAllamericanStyleDog6
@@ -1229,7 +1240,7 @@ Individual: FoodPollution:Beef
         FoodPollution:meat
     
     Facts:  
-     FoodPollution:CO2perGram  "59"^^xsd:positiveInteger
+     FoodPollution:CO2perGram  "59.0"^^xsd:double
     
     
 Individual: FoodPollution:BeefCrunchyCheesyCoreBurrito
@@ -1387,8 +1398,7 @@ Individual: FoodPollution:BigMac
     
     Facts:  
      FoodPollution:isMeatBased  FoodPollution:Beef,
-     FoodPollution:GramsOfProtein  "25.0"^^xsd:double,
-     FoodPollution:GramsOfProtein  "25"^^xsd:positiveInteger
+     FoodPollution:GramsOfProtein  "25.0"^^xsd:double
     
     
 Individual: FoodPollution:BigPhillyCheesesteakSalad
@@ -4932,8 +4942,7 @@ Individual: FoodPollution:Tofu
         FoodPollution:vegan
     
     Facts:  
-     FoodPollution:CO2perGram  "3.0"^^xsd:double,
-     FoodPollution:CO2perGram  "3"^^xsd:positiveInteger
+     FoodPollution:CO2perGram  "3.0"^^xsd:double
     
     
 Individual: FoodPollution:TraditionalUltimateChickenSandwich
