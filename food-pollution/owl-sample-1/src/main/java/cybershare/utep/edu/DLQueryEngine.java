@@ -98,7 +98,7 @@ public class DLQueryEngine {
         return individuals.getFlattened();
     }
 
-    private static OWLReasoner createReasoner(final OWLOntology rootOntology) {
+    public static OWLReasoner createReasoner(final OWLOntology rootOntology) {
         // We need to create an instance of OWLReasoner. An OWLReasoner provides
         // the basic query functionality that we need, for example the ability
         // obtain the subclasses of a class etc. To do this we use a reasoner

@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 
 import org.semanticweb.owlapi.apibinding.OWLManager;
-import org.semanticweb.owlapi.model.AddAxiom;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
@@ -17,9 +16,10 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
+import org.semanticweb.owlapi.reasoner.OWLReasoner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
-
-import java.io.*;
 import java.util.*;
 import java.util.Scanner;
 
@@ -33,6 +33,7 @@ import java.util.Scanner;
  * Include your name here - ex. Modified by Ana Doe for Assignment 3
  *
  */
+@SpringBootApplication
 public class MyFirstOWLAPIProgram 
 {
     private static final String FOOD_POLLUTION = "/Users/greywind/Desktop/Utep/Spring_2022/data_science/project/food-pollution-owl-api/food-pollution/ontologies/FoodPollution.owl";
@@ -84,8 +85,11 @@ public class MyFirstOWLAPIProgram
             scanner.nextLine();
             while(scanner.hasNextLine()){
                 try{
-                    String[] line = scanner.nextLine().split(",");
-                    String meal = line[1];
+                    String[] line       = scanner.nextLine().split(",");
+                    String meal         = line[1];
+                    String restaurant   = line[0];
+                    Double calories     = Double.parseDouble(line[2]);
+
                     double protein = Double.parseDouble(line[12]);
                     meal = meal.replaceAll("[^a-zA-Z0-9]","");
                     addClassIndividual(ontology, manager, dataFactory, meal, "Meal");
@@ -106,6 +110,9 @@ public class MyFirstOWLAPIProgram
                         addObjectPropertyAssertion(ontology, manager, dataFactory, meal, "Beef", "isMeatBased");
                         addDataPropertyAssertion(ontology, manager, dataFactory, meal, protein, "GramsOfProtein");
                     }
+
+                    addDataPropertyAssertion(ontology, manager, dataFactory, meal, restaurant, "isFromRestaurant");
+                    addDataPropertyAssertion(ontology, manager, dataFactory, meal, calories, "hasCalories");
                 } catch(NumberFormatException e){
 
                 }
@@ -116,24 +123,67 @@ public class MyFirstOWLAPIProgram
 
             saveOntology(FOOD_POLLUTION_NEW, manager, ontology);
 
+                        
+            //WLOntology ontology = loadOntologyFromFile(FOOD_POLLUTION_NEW, manager);
             Set<OWLNamedIndividual> meals = DLQueryEngine.getInstances("Meal", ontology);
-
+            OWLReasoner reasoner = DLQueryEngine.createReasoner(ontology);
+            
             //OWLDataPropertyAssertionAxiom assertion; 
             for (OWLNamedIndividual meal : meals){
                 System.out.println("------------------");
-                //System.out.println(meal.getSignature());
-                ontology.getDataPropertyAssertionAxioms(meal).stream().forEach(x -> System.out.println(x.getObject().getLiteral()));
-                //meal.dataPropertiesInSignature().forEach(x-> System.out.println(x));
-                //ontology.getDataPropertyAssertionAxioms(meal).stream().forEach(x -> System.out.println(meal.getDataPropertiesInSignature()));
+                //System.out.println(meal.toString().substring(meal.toString().indexOf("#")+1, meal.toString().indexOf(">")));
+                System.out.println(getNameFromOntology(meal.toString()));
+                System.out.println("-------------------------------------");
+                //System.out.println(ontology.getDataPropertyAssertionAxioms(meal));
+                System.out.println("Grams of protein, From Resturant, Calories:::");
+                ontology.getDataPropertyAssertionAxioms(meal).forEach(x -> System.out.println(x.getProperty().toString() + " : " + x.getObject().getLiteral()));
+                System.out.println("----------------------------------");
+                System.out.println("This is typedoifdpaif:");
+                //ontology.getObjectPropertyAssertionAxioms(meal).forEach(x -> System.out.println(getNameFromOntology(x.getProperty().toString())));
 
-                //System.out.println(meal.getDataPr);
+                // Get the Food type
+                String range = "value"; 
+                ontology.getObjectPropertiesInSignature().stream().forEach(property -> System.out.println(reasoner.getObjectPropertyValues(meal, property).getNodes()));
+                ArrayList<String> nodes = new ArrayList<>();
+                ontology.getObjectPropertiesInSignature()
+                    .stream()
+                    .forEach(property -> reasoner.getObjectPropertyValues(meal, property)
+                        .getNodes()
+                            .stream()
+                            .forEach(node -> nodes.add(node.getRepresentativeElement().toString())));
                 
+
+
+
+                ontology.getObjectPropertiesInSignature()
+                            .stream()
+                            .forEach(property -> reasoner.getObjectPropertyValues(meal, property)
+                                .getNodes()
+                                    .stream()
+                                    .forEach(node -> 
+                                        ontology
+                                            .getDataPropertyAssertionAxioms(
+                                                node.getRepresentativeElement())
+                                                    .stream()
+                                                    .forEach(p -> System.out.println(p.getObject().getLiteral()))));
+                
+                System.out.println(getNameFromOntology(nodes.get(0)));
+                System.out.println("----------------------------");
+                //ontology.getObjectPropertiesInSignature()
+                // ontology.getObjectPropertyAssertionAxioms(meal)
+                //                     .forEach(x -> ontology.getObjectPropertyRangeAxioms(x.getProperty()).forEach(y -> System.out.println(y)));       
+                // ontology.getObjectPropertyAssertionAxioms(meal).stream().forEach(x -> 
+                //         ontology.getObjectPropertyRangeAxioms(x.getProperty()).stream().forEach(y -> 
+                //         y.getRange().individualsInSignature().forEach(d -> System.out.println("Here: " + d))));
+                //ontology.getObjectPropertyDomainAxioms();
+                //ontology.getDataPropertyAssertionAxioms(meal).stream().forEach(x -> System.out.println(x.getObject().getLiteral()));
+                //System.out.println(meal.getDataPr);                
             }
 
-        } catch (OWLOntologyCreationException | OWLOntologyStorageException | IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
+        SpringApplication.run(MyFirstOWLAPIProgram.class, args); 
     }
 
     /**
@@ -143,6 +193,10 @@ public class MyFirstOWLAPIProgram
     public static OWLOntologyManager createManager(){
         OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
         return manager;
+    }
+
+    public static void setString(String range, String nodeString) {
+        range = nodeString; 
     }
 
     /**
@@ -229,6 +283,23 @@ public class MyFirstOWLAPIProgram
         manager.addAxiom(ontology, assertion);
     }
 
+    /**
+    * Add object property assertion (between individuals)
+    * @param ontology
+    * @param manager
+    * @param dataFactory
+    * @param individual_1
+    * @param individual_2
+    * @param property
+    */
+   public static void addDataPropertyAssertion(OWLOntology ontology, OWLOntologyManager manager, OWLDataFactory dataFactory, String individual_1, String individual_2, String property){
+       OWLIndividual i1 = dataFactory.getOWLNamedIndividual(IRI.create(BASE + "#" + individual_1));
+       OWLDataProperty o = dataFactory.getOWLDataProperty(IRI.create(BASE + "#" + property));
+
+       OWLAxiom assertion = dataFactory.getOWLDataPropertyAssertionAxiom(o, i1, individual_2);
+       manager.addAxiom(ontology, assertion);
+   }
+
 
     /**
      * save ontology locally to specific path
@@ -245,5 +316,9 @@ public class MyFirstOWLAPIProgram
         // default format as they are loaded e.g. xml, turtle
         manager.saveOntology(ontology, IRI.create(file.toURI()));
         System.out.println("Ontology was saved");
+    }
+
+    public static String getNameFromOntology(String ontologyName) {
+        return ontologyName.substring(ontologyName.toString().indexOf("#")+1, ontologyName.toString().indexOf(">")); 
     }
 }
