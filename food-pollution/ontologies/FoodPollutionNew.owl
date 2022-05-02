@@ -1,0 +1,6176 @@
+Prefix: : <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#>
+Prefix: FoodPollution: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#>
+Prefix: dc: <http://purl.org/dc/elements/1.1/>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+
+Ontology: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution>
+
+
+Datatype: rdf:PlainLiteral
+
+    
+Datatype: xsd:double
+
+    
+ObjectProperty: FoodPollution:isBased
+
+    Domain: 
+        FoodPollution:Meal
+    
+    Range: 
+        <http://dbpedia.org/ontology/Food>
+    
+    
+ObjectProperty: FoodPollution:isMeatBased
+
+    SubPropertyOf: 
+        FoodPollution:isBased
+    
+    Domain: 
+        FoodPollution:Meal
+    
+    Range: 
+        FoodPollution:meat
+    
+    
+ObjectProperty: FoodPollution:isPlantBased
+
+    SubPropertyOf: 
+        FoodPollution:isBased
+    
+    Domain: 
+        FoodPollution:Meal
+    
+    Range: 
+        FoodPollution:vegan
+    
+    
+DataProperty: FoodPollution:CO2perGram
+
+    Domain: 
+        <http://dbpedia.org/ontology/Food>
+    
+    Range: 
+        xsd:double
+    
+    
+DataProperty: FoodPollution:GramsOfProtein
+
+    Domain: 
+        FoodPollution:Meal
+    
+    Range: 
+        xsd:double
+    
+    
+DataProperty: FoodPollution:hasCalories
+
+    
+DataProperty: FoodPollution:isFromRestaurant
+
+    
+Class: <http://dbpedia.org/ontology/Food>
+
+    EquivalentTo: 
+        FoodPollution:foodQuery
+    
+    
+Class: FoodPollution:Meal
+
+    
+Class: FoodPollution:Question1
+
+    EquivalentTo: 
+        FoodPollution:meat
+    
+    
+Class: FoodPollution:Question2
+
+    EquivalentTo: 
+        FoodPollution:vegan
+    
+    
+Class: FoodPollution:foodQuery
+
+    EquivalentTo: 
+        <http://dbpedia.org/ontology/Food>
+    
+    
+Class: FoodPollution:meat
+
+    EquivalentTo: 
+        FoodPollution:Question1
+    
+    SubClassOf: 
+        <http://dbpedia.org/ontology/Food>
+    
+    
+Class: FoodPollution:meatBased
+
+    EquivalentTo: 
+        FoodPollution:Meal
+         and (FoodPollution:isBased some FoodPollution:meat)
+    
+    
+Class: FoodPollution:vegan
+
+    EquivalentTo: 
+        FoodPollution:Question2
+    
+    SubClassOf: 
+        <http://dbpedia.org/ontology/Food>
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#10PieceChickenMcNuggets>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "24.0"^^xsd:double,
+     FoodPollution:hasCalories  "440.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#10pieceButtermilkCrispyChickenTenders>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "94.0"^^xsd:double,
+     FoodPollution:hasCalories  "1210.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#10pieceSweetNSpicyHoneyBBQGlazedTenders>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "97.0"^^xsd:double,
+     FoodPollution:hasCalories  "1600.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#12PieceGrilledChickenNuggets>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "38.0"^^xsd:double,
+     FoodPollution:hasCalories  "210.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#12lbCheesyPotatoBurrito>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "19.0"^^xsd:double,
+     FoodPollution:hasCalories  "540.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#12lbComboBurrito>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "21.0"^^xsd:double,
+     FoodPollution:hasCalories  "460.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#12lbFlameThrowerGrillBurger>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "46.0"^^xsd:double,
+     FoodPollution:hasCalories  "1000.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#12lbGrillBurgerwithCheese>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "40.0"^^xsd:double,
+     FoodPollution:hasCalories  "800.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#12pieceButtermilkCrispyChickenTenders>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "115.0"^^xsd:double,
+     FoodPollution:hasCalories  "1510.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#12pieceChickenNuggets>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "41.0"^^xsd:double,
+     FoodPollution:hasCalories  "390.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#14lbBaconCheeseGrillBurger>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "30.0"^^xsd:double,
+     FoodPollution:hasCalories  "630.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#14lbGrillBurgerwithCheese>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "23.0"^^xsd:double,
+     FoodPollution:hasCalories  "540.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#14lbMushroomSwissGrillBurger>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "24.0"^^xsd:double,
+     FoodPollution:hasCalories  "570.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#1PieceChicknStrips>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "11.0"^^xsd:double,
+     FoodPollution:hasCalories  "120.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#20PieceChickenMcNuggets>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "49.0"^^xsd:double,
+     FoodPollution:hasCalories  "890.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#20PieceChickenNuggets>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "51.0"^^xsd:double,
+     FoodPollution:hasCalories  "950.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#20pieceButtermilkCrispyChickenTenders>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "186.0"^^xsd:double,
+     FoodPollution:hasCalories  "2430.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#2PieceChicknStrips>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "22.0"^^xsd:double,
+     FoodPollution:hasCalories  "230.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#2piecePrimeCutChickenTenders>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "16.0"^^xsd:double,
+     FoodPollution:hasCalories  "240.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#30pieceChickenNuggets>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "103.0"^^xsd:double,
+     FoodPollution:hasCalories  "970.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#3PieceChicknStrips>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "28.0"^^xsd:double,
+     FoodPollution:hasCalories  "350.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#3PieceCrispyChickenTenderDinner>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "22.0"^^xsd:double,
+     FoodPollution:hasCalories  "280.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#3PieceSuperCrunchChickenStripDinner>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "30.0"^^xsd:double,
+     FoodPollution:hasCalories  "970.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#3PieceSuperCrunchChickenStrips>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "22.0"^^xsd:double,
+     FoodPollution:hasCalories  "330.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#3chickenstripsChickenStrips>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "22.0"^^xsd:double,
+     FoodPollution:hasCalories  "350.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#3pieceButtermilkCrispyChickenTenders>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "28.0"^^xsd:double,
+     FoodPollution:hasCalories  "370.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#3piecePrimeCutChickenTenders>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "23.0"^^xsd:double,
+     FoodPollution:hasCalories  "360.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#40pieceChickenMcNuggets>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "98.0"^^xsd:double,
+     FoodPollution:hasCalories  "1770.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#4PieceChickenMcNuggets>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "10.0"^^xsd:double,
+     FoodPollution:hasCalories  "180.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#4PieceChickenNuggets>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "10.0"^^xsd:double,
+     FoodPollution:hasCalories  "190.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#4PieceChickenStripBasketwCountryGravy>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "35.0"^^xsd:double,
+     FoodPollution:hasCalories  "1030.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#4PieceGrilledChickenNuggets>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "13.0"^^xsd:double,
+     FoodPollution:hasCalories  "70.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#4PieceSpicyChickenNuggets>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "8.0"^^xsd:double,
+     FoodPollution:hasCalories  "210.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#4PieceSuperCrunchChickenStripDinner>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "37.0"^^xsd:double,
+     FoodPollution:hasCalories  "1080.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#4PieceSuperCrunchChickenStrips>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "29.0"^^xsd:double,
+     FoodPollution:hasCalories  "440.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#4pieceButtermilkCrispyChickenTenders>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "38.0"^^xsd:double,
+     FoodPollution:hasCalories  "480.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#4pieceChickenNuggets>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "14.0"^^xsd:double,
+     FoodPollution:hasCalories  "130.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#4pieceChicknStrips>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "37.0"^^xsd:double,
+     FoodPollution:hasCalories  "470.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#4pieceSweetNSpicyHoneyBBQGlazedTenders>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "39.0"^^xsd:double,
+     FoodPollution:hasCalories  "640.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#5PieceCrispyChickenTenderDinner>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "37.0"^^xsd:double,
+     FoodPollution:hasCalories  "470.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#5PieceSuperCrunchChickenStripDinner>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "44.0"^^xsd:double,
+     FoodPollution:hasCalories  "1190.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#5PieceSuperCrunchChickenStrips>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "36.0"^^xsd:double,
+     FoodPollution:hasCalories  "550.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#5piecePrimeCutChickenTenders>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "39.0"^^xsd:double,
+     FoodPollution:hasCalories  "600.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6BBQRibSandwich>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "19.0"^^xsd:double,
+     FoodPollution:hasCalories  "430.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6BLT>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "15.0"^^xsd:double,
+     FoodPollution:hasCalories  "320.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6BigHotPastrami>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "29.0"^^xsd:double,
+     FoodPollution:hasCalories  "580.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6BigPhillyCheesesteak>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "38.0"^^xsd:double,
+     FoodPollution:hasCalories  "500.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6BlackForestHam>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "18.0"^^xsd:double,
+     FoodPollution:hasCalories  "290.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6CarvedTurkey>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "25.0"^^xsd:double,
+     FoodPollution:hasCalories  "330.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6CarvedTurkeyBaconwCheese>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "33.0"^^xsd:double,
+     FoodPollution:hasCalories  "570.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6ChickenBaconRanchMelt>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "35.0"^^xsd:double,
+     FoodPollution:hasCalories  "570.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6ChickenPizziolaMelt>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "32.0"^^xsd:double,
+     FoodPollution:hasCalories  "460.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6ColdCutCombo>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "18.0"^^xsd:double,
+     FoodPollution:hasCalories  "370.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6CornedBeefReuben>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "39.0"^^xsd:double,
+     FoodPollution:hasCalories  "470.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6ItalianBMT>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "20.0"^^xsd:double,
+     FoodPollution:hasCalories  "410.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6ItalianHero>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "26.0"^^xsd:double,
+     FoodPollution:hasCalories  "550.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6MeatballMarinara>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "21.0"^^xsd:double,
+     FoodPollution:hasCalories  "480.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6OvenRoastedChicken>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "23.0"^^xsd:double,
+     FoodPollution:hasCalories  "320.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6PieceChickenMcNuggets>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "15.0"^^xsd:double,
+     FoodPollution:hasCalories  "270.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6PieceChickenNuggets>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "15.0"^^xsd:double,
+     FoodPollution:hasCalories  "290.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6PieceChickenStripBasketwCountryGravy>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "49.0"^^xsd:double,
+     FoodPollution:hasCalories  "1260.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6PieceGrilledChickenNuggets>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "19.0"^^xsd:double,
+     FoodPollution:hasCalories  "110.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6RoastBeef>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "24.0"^^xsd:double,
+     FoodPollution:hasCalories  "320.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6RotisserieStyleChicken>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "29.0"^^xsd:double,
+     FoodPollution:hasCalories  "350.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6SpicyItalian>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "20.0"^^xsd:double,
+     FoodPollution:hasCalories  "480.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6SteakandCheese>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "26.0"^^xsd:double,
+     FoodPollution:hasCalories  "380.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6SubwayClub>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "23.0"^^xsd:double,
+     FoodPollution:hasCalories  "310.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6SubwayMeltincludescheese>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "23.0"^^xsd:double,
+     FoodPollution:hasCalories  "370.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6SubwaySeafoodSensation>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "13.0"^^xsd:double,
+     FoodPollution:hasCalories  "420.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6SweetOnionChickenTeriyaki>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "26.0"^^xsd:double,
+     FoodPollution:hasCalories  "380.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6Tuna>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "20.0"^^xsd:double,
+     FoodPollution:hasCalories  "470.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6TurkeyBaconAvocado>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "22.0"^^xsd:double,
+     FoodPollution:hasCalories  "390.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6TurkeyBreast>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "18.0"^^xsd:double,
+     FoodPollution:hasCalories  "280.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6TurkeyBreastHam>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "18.0"^^xsd:double,
+     FoodPollution:hasCalories  "280.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6TurkeyItalianoMeltwithProvolone>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "24.0"^^xsd:double,
+     FoodPollution:hasCalories  "490.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6VeggieDelite>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isPlantBased  FoodPollution:Tofu,
+     FoodPollution:GramsOfProtein  "8.0"^^xsd:double,
+     FoodPollution:hasCalories  "230.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6VeggiePatty>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isPlantBased  FoodPollution:Tofu,
+     FoodPollution:GramsOfProtein  "23.0"^^xsd:double,
+     FoodPollution:hasCalories  "390.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6pieceButtermilkCrispyChickenTenders>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "58.0"^^xsd:double,
+     FoodPollution:hasCalories  "760.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6pieceChickenNuggets>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "21.0"^^xsd:double,
+     FoodPollution:hasCalories  "190.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#6pieceSweetNSpicyHoneyBBQGlazedTenders>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "58.0"^^xsd:double,
+     FoodPollution:hasCalories  "960.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#7LayerBurrito>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "16.0"^^xsd:double,
+     FoodPollution:hasCalories  "510.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#8pieceChickenNuggets>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "28.0"^^xsd:double,
+     FoodPollution:hasCalories  "260.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: <http://www.semanticweb.org/Team11/ontologies/2022/3/FoodPollution#8pieceGrilledChickenNuggets>
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "25.0"^^xsd:double,
+     FoodPollution:hasCalories  "140.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: FoodPollution:AllBeefAllamericanStyleDog6
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "12.0"^^xsd:double,
+     FoodPollution:hasCalories  "370.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:AllBeefChicagoDog6
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "14.0"^^xsd:double,
+     FoodPollution:hasCalories  "430.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:AllBeefChiliCheeseConey6
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "17.0"^^xsd:double,
+     FoodPollution:hasCalories  "410.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:AllBeefNewYorkDog6
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "13.0"^^xsd:double,
+     FoodPollution:hasCalories  "340.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:AllBeefRegularHotDog6
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "11.0"^^xsd:double,
+     FoodPollution:hasCalories  "320.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:AmericanBrewhouseKing
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "134.0"^^xsd:double,
+     FoodPollution:hasCalories  "1550.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:ArbyQSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "18.0"^^xsd:double,
+     FoodPollution:hasCalories  "400.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:ArbysMelt
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "18.0"^^xsd:double,
+     FoodPollution:hasCalories  "330.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:ArtisanGrilledChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "37.0"^^xsd:double,
+     FoodPollution:hasCalories  "380.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:AutumnCarvedTurkeySalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "25.0"^^xsd:double,
+     FoodPollution:hasCalories  "300.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:BBQBaconCrispyChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "7.0"^^xsd:double,
+     FoodPollution:hasCalories  "440.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:BBQBaconKing
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "57.0"^^xsd:double,
+     FoodPollution:hasCalories  "1100.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:BKVEGGIEBurger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isPlantBased  FoodPollution:Tofu,
+     FoodPollution:GramsOfProtein  "22.0"^^xsd:double,
+     FoodPollution:hasCalories  "410.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:BK_Veggie_Burger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isPlantBased  FoodPollution:Tofu
+    
+    
+Individual: FoodPollution:BLTCrunchwrapSlider
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "12.0"^^xsd:double,
+     FoodPollution:hasCalories  "430.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:BLTSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "10.0"^^xsd:double,
+     FoodPollution:hasCalories  "150.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:BaconCheddarRanchChickenSaladwcrispyChickenDressing
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "36.0"^^xsd:double,
+     FoodPollution:hasCalories  "720.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:BaconCheddarRanchChickenSaladwgrilledChickenDressing
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "42.0"^^xsd:double,
+     FoodPollution:hasCalories  "590.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:BaconCheddarRanchCrispyChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "34.0"^^xsd:double,
+     FoodPollution:hasCalories  "830.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:BaconCheeseDog
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "19.0"^^xsd:double,
+     FoodPollution:hasCalories  "420.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:BaconCheeseWhopper
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "29.0"^^xsd:double,
+     FoodPollution:hasCalories  "770.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:BaconCheeseburger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "18.0"^^xsd:double,
+     FoodPollution:hasCalories  "330.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:BaconCheeseburgerDeluxe
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "12.0"^^xsd:double,
+     FoodPollution:hasCalories  "290.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:BaconKing
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "57.0"^^xsd:double,
+     FoodPollution:hasCalories  "1040.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:BaconKingJr
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "32.0"^^xsd:double,
+     FoodPollution:hasCalories  "730.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:BaconSwissSourdoughKing
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "56.0"^^xsd:double,
+     FoodPollution:hasCalories  "1000.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:BarbecuePorkSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PigMeat,
+     FoodPollution:GramsOfProtein  "17.0"^^xsd:double,
+     FoodPollution:hasCalories  "310.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:BeanBurrito
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "13.0"^^xsd:double,
+     FoodPollution:hasCalories  "370.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:Beef
+
+    Types: 
+        FoodPollution:meat
+    
+    Facts:  
+     FoodPollution:CO2perGram  "59.0"^^xsd:double
+    
+    
+Individual: FoodPollution:BeefCrunchyCheesyCoreBurrito
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "22.0"^^xsd:double,
+     FoodPollution:hasCalories  "630.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:BeefQuesalupa
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "19.0"^^xsd:double,
+     FoodPollution:hasCalories  "460.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:BeefQuesarito
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "22.0"^^xsd:double,
+     FoodPollution:hasCalories  "650.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:BeefSpicyCheesyCoreBurrito
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "22.0"^^xsd:double,
+     FoodPollution:hasCalories  "570.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:Beefbeefherd
+
+    Types: 
+        FoodPollution:meat
+    
+    Facts:  
+     FoodPollution:CO2perGram  "59.599999999999994"^^xsd:double
+    
+    
+Individual: FoodPollution:Beefdairyherd
+
+    Types: 
+        FoodPollution:meat
+    
+    Facts:  
+     FoodPollution:CO2perGram  "21.099999999999998"^^xsd:double
+    
+    
+Individual: FoodPollution:BeefnCheddarClassic
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "23.0"^^xsd:double,
+     FoodPollution:hasCalories  "450.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:BeefnCheddarMid
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "39.0"^^xsd:double,
+     FoodPollution:hasCalories  "630.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:Beefy5LayerBurrito
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "19.0"^^xsd:double,
+     FoodPollution:hasCalories  "550.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:BeefyCheddarCrunchwrapSlider
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "14.0"^^xsd:double,
+     FoodPollution:hasCalories  "410.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:BeefyFritosBurrito
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "13.0"^^xsd:double,
+     FoodPollution:hasCalories  "440.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:BeefyMiniQuesadilla
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "9.0"^^xsd:double,
+     FoodPollution:hasCalories  "210.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:BeefyNachoGriller
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "12.0"^^xsd:double,
+     FoodPollution:hasCalories  "420.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:BigFishSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "17.0"^^xsd:double,
+     FoodPollution:hasCalories  "530.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:BigHotPastramiMeltSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "23.0"^^xsd:double,
+     FoodPollution:hasCalories  "400.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:BigMac
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "25.0"^^xsd:double,
+     FoodPollution:hasCalories  "540.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:BigPhillyCheesesteakSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "32.0"^^xsd:double,
+     FoodPollution:hasCalories  "330.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:BlackBeanBurrito
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "14.0"^^xsd:double,
+     FoodPollution:hasCalories  "410.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:BlackForestHamSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "12.0"^^xsd:double,
+     FoodPollution:hasCalories  "110.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:BourbonBBQBrisketSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "38.0"^^xsd:double,
+     FoodPollution:hasCalories  "650.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:BourbonBBQChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "38.0"^^xsd:double,
+     FoodPollution:hasCalories  "690.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:BourbonBBQSteakSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "38.0"^^xsd:double,
+     FoodPollution:hasCalories  "690.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:BreadedMushrooms
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "7.0"^^xsd:double,
+     FoodPollution:hasCalories  "250.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:BuffaloChickenSaladwithRanchdressing
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "20.0"^^xsd:double,
+     FoodPollution:hasCalories  "360.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:BuffaloChickenSlider
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "12.0"^^xsd:double,
+     FoodPollution:hasCalories  "290.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:BuffaloDunkedUltimateChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "23.0"^^xsd:double,
+     FoodPollution:hasCalories  "1000.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:BurritoSupremeBeef
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "16.0"^^xsd:double,
+     FoodPollution:hasCalories  "420.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:BurritoSupremeChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "19.0"^^xsd:double,
+     FoodPollution:hasCalories  "390.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:BurritoSupremeSteak
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "17.0"^^xsd:double,
+     FoodPollution:hasCalories  "390.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:ButtermilkBuffaloChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "29.0"^^xsd:double,
+     FoodPollution:hasCalories  "540.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:ButtermilkChickenBaconSwiss
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "39.0"^^xsd:double,
+     FoodPollution:hasCalories  "650.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:ButtermilkChickenCordonBleuSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "41.0"^^xsd:double,
+     FoodPollution:hasCalories  "690.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:ButtermilkCrispyChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "29.0"^^xsd:double,
+     FoodPollution:hasCalories  "550.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:CantinaPowerBowlChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "26.0"^^xsd:double,
+     FoodPollution:hasCalories  "560.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:CantinaPowerBowlSteak
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "27.0"^^xsd:double,
+     FoodPollution:hasCalories  "580.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:CantinaPowerBowlVeggie
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isPlantBased  FoodPollution:Tofu,
+     FoodPollution:GramsOfProtein  "14.0"^^xsd:double,
+     FoodPollution:hasCalories  "540.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:CantinaPowerBurritoChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "32.0"^^xsd:double,
+     FoodPollution:hasCalories  "760.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:CantinaPowerBurritoSteak
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "33.0"^^xsd:double,
+     FoodPollution:hasCalories  "780.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:CantinaPowerBurritoVeggie
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isPlantBased  FoodPollution:Tofu,
+     FoodPollution:GramsOfProtein  "20.0"^^xsd:double,
+     FoodPollution:hasCalories  "740.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:CarvedTurkeyBaconwCheeseSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "28.0"^^xsd:double,
+     FoodPollution:hasCalories  "280.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:CarvedTurkeySalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "19.0"^^xsd:double,
+     FoodPollution:hasCalories  "150.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:ChalupaSupremeBeef
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "13.0"^^xsd:double,
+     FoodPollution:hasCalories  "370.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:ChalupaSupremeChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "16.0"^^xsd:double,
+     FoodPollution:hasCalories  "340.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:ChalupaSupremeSteak
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "14.0"^^xsd:double,
+     FoodPollution:hasCalories  "340.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:ChargrilledChickenClubSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "37.0"^^xsd:double,
+     FoodPollution:hasCalories  "430.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: FoodPollution:ChargrilledChickenCoolWrap
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "37.0"^^xsd:double,
+     FoodPollution:hasCalories  "350.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: FoodPollution:ChargrilledChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "29.0"^^xsd:double,
+     FoodPollution:hasCalories  "310.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: FoodPollution:CheeseDog
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "16.0"^^xsd:double,
+     FoodPollution:hasCalories  "390.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:CheesePizza
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "32.0"^^xsd:double,
+     FoodPollution:hasCalories  "680.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:CheeseQuesadilla
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "19.0"^^xsd:double,
+     FoodPollution:hasCalories  "480.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:CheeseRollUp
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "9.0"^^xsd:double,
+     FoodPollution:hasCalories  "190.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:CheeseVeggiesPizza
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isPlantBased  FoodPollution:Tofu,
+     FoodPollution:GramsOfProtein  "36.0"^^xsd:double,
+     FoodPollution:hasCalories  "740.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:Cheeseburger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "15.0"^^xsd:double,
+     FoodPollution:GramsOfProtein  "16.0"^^xsd:double,
+     FoodPollution:hasCalories  "300.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King",
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:CheesyBaconPretzelDog6In
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "15.0"^^xsd:double,
+     FoodPollution:hasCalories  "500.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:CheesyBeanandRiceBurrito
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "11.0"^^xsd:double,
+     FoodPollution:hasCalories  "420.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:CheesyGorditaCrunch
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "20.0"^^xsd:double,
+     FoodPollution:hasCalories  "490.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:ChickenBLTSaladwCrispyChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "35.0"^^xsd:double,
+     FoodPollution:hasCalories  "690.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:ChickenBLTSaladwGrilledChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "36.0"^^xsd:double,
+     FoodPollution:hasCalories  "550.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:ChickenBaconRanchMeltSaladincludesRanchdressing
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "30.0"^^xsd:double,
+     FoodPollution:hasCalories  "510.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:ChickenBaconRanchSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "33.0"^^xsd:double,
+     FoodPollution:hasCalories  "500.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:ChickenBurger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "22.0"^^xsd:double,
+     FoodPollution:hasCalories  "480.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:ChickenCaesarSaladwCrispyChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "34.0"^^xsd:double,
+     FoodPollution:hasCalories  "670.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:ChickenCaesarSaladwGrilledChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "35.0"^^xsd:double,
+     FoodPollution:hasCalories  "530.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:ChickenCordonBleuSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "32.0"^^xsd:double,
+     FoodPollution:hasCalories  "730.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:ChickenCrunchyCheesyCoreBurrito
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "25.0"^^xsd:double,
+     FoodPollution:hasCalories  "610.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:ChickenDeluxe
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "31.0"^^xsd:double,
+     FoodPollution:hasCalories  "500.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: FoodPollution:ChickenEnchiladasMealKit
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "39.0"^^xsd:double,
+     FoodPollution:hasCalories  "860.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: FoodPollution:ChickenFries
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "16.0"^^xsd:double,
+     FoodPollution:hasCalories  "290.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:ChickenMozzarellaSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "34.0"^^xsd:double,
+     FoodPollution:hasCalories  "640.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:ChickenNuggets10pc
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "21.0"^^xsd:double,
+     FoodPollution:hasCalories  "470.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:ChickenParmesanMealKit
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "48.0"^^xsd:double,
+     FoodPollution:hasCalories  "720.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: FoodPollution:ChickenParmesanSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "32.0"^^xsd:double,
+     FoodPollution:hasCalories  "570.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:ChickenQuesadilla
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "27.0"^^xsd:double,
+     FoodPollution:hasCalories  "520.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:ChickenQuesalupa
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "22.0"^^xsd:double,
+     FoodPollution:hasCalories  "440.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:ChickenQuesarito
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "24.0"^^xsd:double,
+     FoodPollution:hasCalories  "620.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:ChickenSaladSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "28.0"^^xsd:double,
+     FoodPollution:hasCalories  "490.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: FoodPollution:ChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "28.0"^^xsd:double,
+     FoodPollution:hasCalories  "440.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: FoodPollution:ChickenSoftTaco
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "12.0"^^xsd:double,
+     FoodPollution:hasCalories  "170.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:ChickenSpicyCheesyCoreBurrito
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "24.0"^^xsd:double,
+     FoodPollution:hasCalories  "540.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:ChickenStripSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "19.0"^^xsd:double,
+     FoodPollution:hasCalories  "450.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:ChickenTendernCheeseSlider
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "15.0"^^xsd:double,
+     FoodPollution:hasCalories  "290.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:ChicknSlider
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "16.0"^^xsd:double,
+     FoodPollution:hasCalories  "270.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: FoodPollution:Chickstar
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "17.0"^^xsd:double,
+     FoodPollution:hasCalories  "620.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:ChiliCheeseBurrito
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "16.0"^^xsd:double,
+     FoodPollution:hasCalories  "380.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:ChiliCheeseDog
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "16.0"^^xsd:double,
+     FoodPollution:hasCalories  "380.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:ChiliCheeseMegaDog
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "32.0"^^xsd:double,
+     FoodPollution:hasCalories  "760.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:ChiliDog
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "13.0"^^xsd:double,
+     FoodPollution:hasCalories  "330.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:ChipotleCrispyChickenGriller
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "9.0"^^xsd:double,
+     FoodPollution:hasCalories  "290.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:ChipotleSouthwestSteakCheeseWrap
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "43.0"^^xsd:double,
+     FoodPollution:hasCalories  "760.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:ChoppedSideSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "5.0"^^xsd:double,
+     FoodPollution:hasCalories  "70.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:ClassicChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "25.0"^^xsd:double,
+     FoodPollution:hasCalories  "510.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:ClassicFrenchDipSwissAuJus
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "35.0"^^xsd:double,
+     FoodPollution:hasCalories  "540.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:ClassicRoastBeef
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "23.0"^^xsd:double,
+     FoodPollution:hasCalories  "360.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:ColdCutComboSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "12.0"^^xsd:double,
+     FoodPollution:hasCalories  "180.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:CoolRanchDoritosDoubleDeckerTaco
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "13.0"^^xsd:double,
+     FoodPollution:hasCalories  "320.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:CoolRanchDoritosLocosTaco
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "8.0"^^xsd:double,
+     FoodPollution:hasCalories  "160.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:CoolRanchDoritosLocosTacoSupreme
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "9.0"^^xsd:double,
+     FoodPollution:hasCalories  "200.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:CoolRanchHabaneroDoubleStackedTaco
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "13.0"^^xsd:double,
+     FoodPollution:hasCalories  "350.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:CornDog
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "6.0"^^xsd:double,
+     FoodPollution:hasCalories  "210.0"^^xsd:double,
+     FoodPollution:hasCalories  "260.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen",
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:CornedBeefnCheeseSlider
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "14.0"^^xsd:double,
+     FoodPollution:hasCalories  "220.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:CrispyAsiagoCaesarChickenClubSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "31.0"^^xsd:double,
+     FoodPollution:hasCalories  "680.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:CrispyBaconSmokehouseChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "46.0"^^xsd:double,
+     FoodPollution:hasCalories  "920.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:CrispyBuffaloChickenMelt
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "30.0"^^xsd:double,
+     FoodPollution:hasCalories  "580.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:CrispyChickenBLTSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "37.0"^^xsd:double,
+     FoodPollution:hasCalories  "520.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:CrispyChickenFarmhouseSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "28.0"^^xsd:double,
+     FoodPollution:hasCalories  "430.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:CrispyChickenGardenGreensSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "17.0"^^xsd:double,
+     FoodPollution:hasCalories  "280.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:CrispyChickenJr
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "12.0"^^xsd:double,
+     FoodPollution:hasCalories  "430.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:CrispyChickenQuesadilla
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "26.0"^^xsd:double,
+     FoodPollution:hasCalories  "650.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:CrispyChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "23.0"^^xsd:double,
+     FoodPollution:GramsOfProtein  "24.0"^^xsd:double,
+     FoodPollution:hasCalories  "570.0"^^xsd:double,
+     FoodPollution:hasCalories  "600.0"^^xsd:double,
+     FoodPollution:hasCalories  "670.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King",
+     FoodPollution:isFromRestaurant  "Dairy Queen",
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:CrispyChickenWrap
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "12.0"^^xsd:double,
+     FoodPollution:hasCalories  "350.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:CrispyFishSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "17.0"^^xsd:double,
+     FoodPollution:hasCalories  "470.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:CrispyGarlicWhiteCheddarChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "33.0"^^xsd:double,
+     FoodPollution:hasCalories  "700.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:CrispyMapleBaconDijonChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "39.0"^^xsd:double,
+     FoodPollution:hasCalories  "740.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:CrispyPicoGuacamoleChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "31.0"^^xsd:double,
+     FoodPollution:hasCalories  "680.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:CrispySignatureSrirachaChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "32.0"^^xsd:double,
+     FoodPollution:hasCalories  "730.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:CrispySweetBBQBaconChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "39.0"^^xsd:double,
+     FoodPollution:hasCalories  "800.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:CrunchwrapSupreme
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "16.0"^^xsd:double,
+     FoodPollution:hasCalories  "540.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:CrunchyTaco
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "8.0"^^xsd:double,
+     FoodPollution:hasCalories  "170.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:CrunchyTacoSupreme
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "9.0"^^xsd:double,
+     FoodPollution:hasCalories  "200.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:DOUBLEDECKERTacoSupreme
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "14.0"^^xsd:double,
+     FoodPollution:hasCalories  "350.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:DOUBLEWHOPPERwCheese
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "52.0"^^xsd:double,
+     FoodPollution:hasCalories  "990.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:DOUBLEWHOPPERwoCheese
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "47.0"^^xsd:double,
+     FoodPollution:hasCalories  "900.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:DQUltimateBurger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "41.0"^^xsd:double,
+     FoodPollution:hasCalories  "780.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:DeluxeCheeseburger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "20.0"^^xsd:double,
+     FoodPollution:hasCalories  "400.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:DeluxeDoubleCheeseburger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "34.0"^^xsd:double,
+     FoodPollution:hasCalories  "640.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:DeluxeDoubleHamburger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "29.0"^^xsd:double,
+     FoodPollution:hasCalories  "540.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:DeluxeHamburger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "17.0"^^xsd:double,
+     FoodPollution:hasCalories  "350.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:DeluxeUltimateChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "33.0"^^xsd:double,
+     FoodPollution:hasCalories  "740.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:DoritosCheesyGorditaCrunchCoolRanch
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "20.0"^^xsd:double,
+     FoodPollution:hasCalories  "490.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:DoritosCheesyGorditaCrunchFiery
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "20.0"^^xsd:double,
+     FoodPollution:hasCalories  "490.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:DoritosCheesyGorditaCrunchNachoCheese
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "20.0"^^xsd:double,
+     FoodPollution:hasCalories  "490.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:DoubleBaconCheeseburger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "31.0"^^xsd:double,
+     FoodPollution:hasCalories  "520.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:DoubleBaconSmokehouseBurger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "70.0"^^xsd:double,
+     FoodPollution:hasCalories  "1130.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:DoubleChalupa
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "21.0"^^xsd:double,
+     FoodPollution:hasCalories  "600.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:DoubleCheeseburger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "25.0"^^xsd:double,
+     FoodPollution:GramsOfProtein  "26.0"^^xsd:double,
+     FoodPollution:hasCalories  "430.0"^^xsd:double,
+     FoodPollution:hasCalories  "450.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King",
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:DoubleCheesyGorditaCrunch
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "25.0"^^xsd:double,
+     FoodPollution:hasCalories  "570.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:DoubleChickenSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "36.0"^^xsd:double,
+     FoodPollution:hasCalories  "220.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:DoubleDeckerTaco
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "13.0"^^xsd:double,
+     FoodPollution:hasCalories  "320.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:DoubleHamburger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "22.0"^^xsd:double,
+     FoodPollution:hasCalories  "360.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:DoubleQuarterPoundKing
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "56.0"^^xsd:double,
+     FoodPollution:hasCalories  "900.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:DoubleQuarterPounderwithCheese
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "51.0"^^xsd:double,
+     FoodPollution:hasCalories  "770.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:DoubleRoastBeef
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "38.0"^^xsd:double,
+     FoodPollution:hasCalories  "510.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:DoubleTostada
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "12.0"^^xsd:double,
+     FoodPollution:hasCalories  "270.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:ExpressTacoSaladwChips
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "23.0"^^xsd:double,
+     FoodPollution:hasCalories  "580.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:ExtraLongCheeseburger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "26.0"^^xsd:double,
+     FoodPollution:hasCalories  "580.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:FieryDoritosDoubleDeckerTaco
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "14.0"^^xsd:double,
+     FoodPollution:hasCalories  "320.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:FieryDoritosLocosTaco
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "8.0"^^xsd:double,
+     FoodPollution:hasCalories  "170.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:FieryDoritosLocosTacoSupreme
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "9.0"^^xsd:double,
+     FoodPollution:hasCalories  "200.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:FiestaTacoSaladBeef
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "26.0"^^xsd:double,
+     FoodPollution:hasCalories  "780.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:FiestaTacoSaladChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "32.0"^^xsd:double,
+     FoodPollution:hasCalories  "720.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:FiestaTacoSaladSteak
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "28.0"^^xsd:double,
+     FoodPollution:hasCalories  "720.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:FiletOFish
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "15.0"^^xsd:double,
+     FoodPollution:hasCalories  "380.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:FireRoastedPhillySteak
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "42.0"^^xsd:double,
+     FoodPollution:hasCalories  "640.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:FootlongBBQRibSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "38.0"^^xsd:double,
+     FoodPollution:hasCalories  "860.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongBLT
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "30.0"^^xsd:double,
+     FoodPollution:hasCalories  "640.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongBigHotPastrami
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "58.0"^^xsd:double,
+     FoodPollution:hasCalories  "1160.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongBigPhillyCheesesteak
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "76.0"^^xsd:double,
+     FoodPollution:hasCalories  "1000.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongBlackForestHam
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "36.0"^^xsd:double,
+     FoodPollution:hasCalories  "580.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongCarvedTurkey
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "50.0"^^xsd:double,
+     FoodPollution:hasCalories  "660.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongCarvedTurkeyBaconwCheese
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "66.0"^^xsd:double,
+     FoodPollution:hasCalories  "1140.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongChickenBaconRanchMelt
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "70.0"^^xsd:double,
+     FoodPollution:hasCalories  "1140.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongChickenPizziolaMelt
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "64.0"^^xsd:double,
+     FoodPollution:hasCalories  "920.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongColdCutCombo
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "36.0"^^xsd:double,
+     FoodPollution:hasCalories  "740.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongCornedBeefReuben
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "78.0"^^xsd:double,
+     FoodPollution:hasCalories  "940.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongItalianBMT
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "40.0"^^xsd:double,
+     FoodPollution:hasCalories  "820.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongItalianHero
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "52.0"^^xsd:double,
+     FoodPollution:hasCalories  "1100.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongMeatballMarinara
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "42.0"^^xsd:double,
+     FoodPollution:hasCalories  "960.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongOvenRoastedChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "46.0"^^xsd:double,
+     FoodPollution:hasCalories  "640.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongQuarterPoundConey
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "30.0"^^xsd:double,
+     FoodPollution:hasCalories  "830.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:FootlongRoastBeef
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "48.0"^^xsd:double,
+     FoodPollution:hasCalories  "640.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongRotisserieStyleChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "58.0"^^xsd:double,
+     FoodPollution:hasCalories  "700.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongSpicyItalian
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "40.0"^^xsd:double,
+     FoodPollution:hasCalories  "960.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongSteakandCheese
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "52.0"^^xsd:double,
+     FoodPollution:hasCalories  "760.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongSubwayClub
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "46.0"^^xsd:double,
+     FoodPollution:hasCalories  "620.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongSubwayMeltincludescheese
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "46.0"^^xsd:double,
+     FoodPollution:hasCalories  "740.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongSubwaySeafoodSensation
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "26.0"^^xsd:double,
+     FoodPollution:hasCalories  "840.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongSweetOnionChickenTeriyaki
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "52.0"^^xsd:double,
+     FoodPollution:hasCalories  "760.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongTuna
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "40.0"^^xsd:double,
+     FoodPollution:hasCalories  "940.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongTurkeyBaconAvocado
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "44.0"^^xsd:double,
+     FoodPollution:hasCalories  "780.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongTurkeyBreast
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "36.0"^^xsd:double,
+     FoodPollution:hasCalories  "560.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongTurkeyBreastHam
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "36.0"^^xsd:double,
+     FoodPollution:hasCalories  "560.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongTurkeyItalianoMeltwithProvolone
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "48.0"^^xsd:double,
+     FoodPollution:hasCalories  "980.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongVeggieDelite
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isPlantBased  FoodPollution:Tofu,
+     FoodPollution:GramsOfProtein  "16.0"^^xsd:double,
+     FoodPollution:hasCalories  "460.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FootlongVeggiePatty
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isPlantBased  FoodPollution:Tofu,
+     FoodPollution:GramsOfProtein  "46.0"^^xsd:double,
+     FoodPollution:hasCalories  "780.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:FrescoBeanBurrito
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "11.0"^^xsd:double,
+     FoodPollution:hasCalories  "350.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:FrescoBurritoSupremeChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "17.0"^^xsd:double,
+     FoodPollution:hasCalories  "340.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:FrescoBurritoSupremeSteak
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "15.0"^^xsd:double,
+     FoodPollution:hasCalories  "340.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:FrescoChickenSoftTaco
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "11.0"^^xsd:double,
+     FoodPollution:hasCalories  "150.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:FrescoCrunchyTaco
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "6.0"^^xsd:double,
+     FoodPollution:hasCalories  "140.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:FrescoGrilledSteakSoftTaco
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "9.0"^^xsd:double,
+     FoodPollution:hasCalories  "150.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:FrescoSoftTaco
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "8.0"^^xsd:double,
+     FoodPollution:hasCalories  "170.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:GarlicParmesanDunkedUltimateChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "23.0"^^xsd:double,
+     FoodPollution:hasCalories  "1350.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:GarlicWhiteCheddarBurger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "32.0"^^xsd:double,
+     FoodPollution:hasCalories  "620.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:GorditaSupremeBeef
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "13.0"^^xsd:double,
+     FoodPollution:hasCalories  "300.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:GorditaSupremeChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "16.0"^^xsd:double,
+     FoodPollution:hasCalories  "270.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:GorditaSupremeSteak
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "14.0"^^xsd:double,
+     FoodPollution:hasCalories  "270.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:GrandTurkeyClub
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "30.0"^^xsd:double,
+     FoodPollution:hasCalories  "480.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:GreekGyro
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "23.0"^^xsd:double,
+     FoodPollution:hasCalories  "710.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:GreekGyroSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "10.0"^^xsd:double,
+     FoodPollution:hasCalories  "420.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:GrilledAsiagoCaesarChickenClubSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "40.0"^^xsd:double,
+     FoodPollution:hasCalories  "610.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:GrilledBaconSmokehouseChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "55.0"^^xsd:double,
+     FoodPollution:hasCalories  "750.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:GrilledChickenBLTSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "42.0"^^xsd:double,
+     FoodPollution:hasCalories  "380.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:GrilledChickenGardenGreensSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "23.0"^^xsd:double,
+     FoodPollution:hasCalories  "150.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:GrilledChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "25.0"^^xsd:double,
+     FoodPollution:GramsOfProtein  "28.0"^^xsd:double,
+     FoodPollution:GramsOfProtein  "37.0"^^xsd:double,
+     FoodPollution:hasCalories  "360.0"^^xsd:double,
+     FoodPollution:hasCalories  "430.0"^^xsd:double,
+     FoodPollution:hasCalories  "470.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King",
+     FoodPollution:isFromRestaurant  "Dairy Queen",
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:GrilledChickenWrap
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "15.0"^^xsd:double,
+     FoodPollution:hasCalories  "280.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:GrilledChiliCheeseDog
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "14.0"^^xsd:double,
+     FoodPollution:hasCalories  "330.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:GrilledGarlicWhiteCheddarChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "42.0"^^xsd:double,
+     FoodPollution:hasCalories  "530.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:GrilledHotDog
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "11.0"^^xsd:double,
+     FoodPollution:hasCalories  "310.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:GrilledMapleBaconDijonChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "48.0"^^xsd:double,
+     FoodPollution:hasCalories  "580.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:GrilledPicoGuacamoleChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "40.0"^^xsd:double,
+     FoodPollution:hasCalories  "520.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:GrilledSignatureSrirachaChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "41.0"^^xsd:double,
+     FoodPollution:hasCalories  "560.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:GrilledSteakSoftTaco
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "11.0"^^xsd:double,
+     FoodPollution:hasCalories  "250.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:GrilledSweetBBQBaconChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "48.0"^^xsd:double,
+     FoodPollution:hasCalories  "630.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:HalfPoundBeefnCheddarSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "49.0"^^xsd:double,
+     FoodPollution:hasCalories  "740.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:HalfPoundFrenchDipSwiss
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "55.0"^^xsd:double,
+     FoodPollution:hasCalories  "750.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:HalfPoundRoastBeefSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "48.0"^^xsd:double,
+     FoodPollution:hasCalories  "610.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:HamSwissMelt
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "18.0"^^xsd:double,
+     FoodPollution:hasCalories  "300.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:Hamburger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "13.0"^^xsd:double,
+     FoodPollution:hasCalories  "250.0"^^xsd:double,
+     FoodPollution:hasCalories  "260.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King",
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:HamnCheeseSlider
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "13.0"^^xsd:double,
+     FoodPollution:hasCalories  "210.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:HatchGreenChileCheeseburger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "35.0"^^xsd:double,
+     FoodPollution:hasCalories  "710.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:HomestyleCheeseburger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "30.0"^^xsd:double,
+     FoodPollution:hasCalories  "550.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:HotDog
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "11.0"^^xsd:double,
+     FoodPollution:hasCalories  "290.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:ItalianBMTSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "14.0"^^xsd:double,
+     FoodPollution:hasCalories  "230.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:ItalianHeroSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "14.0"^^xsd:double,
+     FoodPollution:hasCalories  "230.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:JalapenoBurger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "31.0"^^xsd:double,
+     FoodPollution:hasCalories  "640.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:JalapenoChickenFries
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "15.0"^^xsd:double,
+     FoodPollution:hasCalories  "300.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:JalapenoKingSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "55.0"^^xsd:double,
+     FoodPollution:hasCalories  "990.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:JalapenoRoastBeefnCheeseSlider
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "14.0"^^xsd:double,
+     FoodPollution:hasCalories  "240.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:JrBurger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "15.0"^^xsd:double,
+     FoodPollution:hasCalories  "340.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:JrChiliCheeseburger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "20.0"^^xsd:double,
+     FoodPollution:hasCalories  "410.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:JrDeluxeBurger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "15.0"^^xsd:double,
+     FoodPollution:hasCalories  "380.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:JrDeluxeCheeseburger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "19.0"^^xsd:double,
+     FoodPollution:hasCalories  "450.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:JrDoubleCheeseburger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "31.0"^^xsd:double,
+     FoodPollution:hasCalories  "600.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:KidsMiniSubBlackForestHam
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "10.0"^^xsd:double,
+     FoodPollution:hasCalories  "180.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:KidsMiniSubRoastBeef
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "14.0"^^xsd:double,
+     FoodPollution:hasCalories  "200.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:KidsMiniSubTurkeyBreast
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "10.0"^^xsd:double,
+     FoodPollution:hasCalories  "180.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:KidsMiniSubVeggieDelite
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isPlantBased  FoodPollution:Tofu,
+     FoodPollution:GramsOfProtein  "6.0"^^xsd:double,
+     FoodPollution:hasCalories  "150.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:LargeCheeseCurds
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "43.0"^^xsd:double,
+     FoodPollution:hasCalories  "1050.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:LargeJumboPopcornChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "27.0"^^xsd:double,
+     FoodPollution:hasCalories  "560.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:LargeSpicyJumboPopcornChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "36.0"^^xsd:double,
+     FoodPollution:hasCalories  "610.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:LoadedItalianSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "32.0"^^xsd:double,
+     FoodPollution:hasCalories  "680.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:LoadedPotatoGriller
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "13.0"^^xsd:double,
+     FoodPollution:hasCalories  "470.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:LoadedTacoBurrito
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "20.0"^^xsd:double,
+     FoodPollution:hasCalories  "550.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:LobsterRoll
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "24.0"^^xsd:double,
+     FoodPollution:hasCalories  "290.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:MapleBaconDijon14lbBurger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "37.0"^^xsd:double,
+     FoodPollution:hasCalories  "640.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:McChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "15.0"^^xsd:double,
+     FoodPollution:hasCalories  "350.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:McDouble
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "23.0"^^xsd:double,
+     FoodPollution:hasCalories  "380.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:McRib
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "25.0"^^xsd:double,
+     FoodPollution:hasCalories  "480.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:MeatballMarinaraSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "16.0"^^xsd:double,
+     FoodPollution:hasCalories  "310.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:MexiMelt
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "14.0"^^xsd:double,
+     FoodPollution:hasCalories  "270.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:MexicanPizza
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "20.0"^^xsd:double,
+     FoodPollution:hasCalories  "540.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:MildNakedChickenChalupa
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "20.0"^^xsd:double,
+     FoodPollution:hasCalories  "440.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:MushroomSwissKing
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "49.0"^^xsd:double,
+     FoodPollution:hasCalories  "940.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:NachoCheeseDoritosDoubleDeckerTaco
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "14.0"^^xsd:double,
+     FoodPollution:hasCalories  "320.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:NachoCheeseDoritosLocosTacos
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "8.0"^^xsd:double,
+     FoodPollution:hasCalories  "170.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:NachoCheeseDoritosLocosTacosSupreme
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "9.0"^^xsd:double,
+     FoodPollution:hasCalories  "200.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:NachoCrunchDoubleStackedTaco
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "13.0"^^xsd:double,
+     FoodPollution:hasCalories  "380.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:NachoFriesBellgrande
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "13.0"^^xsd:double,
+     FoodPollution:hasCalories  "710.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:NachosBellGrande
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "18.0"^^xsd:double,
+     FoodPollution:hasCalories  "760.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:NachosSupreme
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "12.0"^^xsd:double,
+     FoodPollution:hasCalories  "430.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:OriginalCheeseburger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "19.0"^^xsd:double,
+     FoodPollution:hasCalories  "400.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:OriginalChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "24.0"^^xsd:double,
+     FoodPollution:hasCalories  "630.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:OriginalDoubleCheeseburger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "34.0"^^xsd:double,
+     FoodPollution:hasCalories  "630.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:OriginalTripleDoubleCrunchwrap
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "23.0"^^xsd:double,
+     FoodPollution:hasCalories  "700.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:OvenRoastedChickenSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "19.0"^^xsd:double,
+     FoodPollution:hasCalories  "140.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:PecanChickenSaladFlatbread
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "22.0"^^xsd:double,
+     FoodPollution:hasCalories  "710.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:PecanChickenSaladSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "33.0"^^xsd:double,
+     FoodPollution:hasCalories  "840.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:PepperoniPizza
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "38.0"^^xsd:double,
+     FoodPollution:hasCalories  "790.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:PicoGuacamole14lbBurger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "29.0"^^xsd:double,
+     FoodPollution:hasCalories  "580.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:PigMeat
+
+    Types: 
+        FoodPollution:meat
+    
+    Facts:  
+     FoodPollution:CO2perGram  "7.2"^^xsd:double
+    
+    
+Individual: FoodPollution:PizzaSlider
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "13.0"^^xsd:double,
+     FoodPollution:hasCalories  "300.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:PorkTenderloinSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PigMeat,
+     FoodPollution:GramsOfProtein  "19.0"^^xsd:double,
+     FoodPollution:hasCalories  "580.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:PoultryMeat
+
+    Types: 
+        FoodPollution:meat
+    
+    Facts:  
+     FoodPollution:CO2perGram  "6.1000000000000005"^^xsd:double
+    
+    
+Individual: FoodPollution:PremiumAsianSaladwCrispyChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "33.0"^^xsd:double,
+     FoodPollution:hasCalories  "490.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:PremiumAsianSaladwGrilledChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "31.0"^^xsd:double,
+     FoodPollution:hasCalories  "270.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:PremiumAsianSaladwoChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "7.0"^^xsd:double,
+     FoodPollution:hasCalories  "140.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:PremiumBaconRanchSaladwCrispyChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "33.0"^^xsd:double,
+     FoodPollution:hasCalories  "490.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:PremiumBaconRanchSaladwGrilledChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "42.0"^^xsd:double,
+     FoodPollution:hasCalories  "320.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:PremiumBaconRanchSaladwoChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "14.0"^^xsd:double,
+     FoodPollution:hasCalories  "190.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:PremiumButtermilkCrispyChickenDeluxeSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "28.0"^^xsd:double,
+     FoodPollution:hasCalories  "570.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:PremiumCrispyChickenDeluxeSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "25.0"^^xsd:double,
+     FoodPollution:hasCalories  "530.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:PremiumSouthwestSaladwCrispyChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "28.0"^^xsd:double,
+     FoodPollution:hasCalories  "520.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:PremiumSouthwestSaladwGrilledChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "37.0"^^xsd:double,
+     FoodPollution:hasCalories  "350.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:PremiumSouthwestSaladwoChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "8.0"^^xsd:double,
+     FoodPollution:hasCalories  "220.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:PretzelChickenFries
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "16.0"^^xsd:double,
+     FoodPollution:hasCalories  "340.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:QuarterPounderwithCheese
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "31.0"^^xsd:double,
+     FoodPollution:hasCalories  "530.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:RegularCheeseCurds
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "35.0"^^xsd:double,
+     FoodPollution:hasCalories  "550.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:RegularGrilledChickenSubSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "34.0"^^xsd:double,
+     FoodPollution:hasCalories  "450.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: FoodPollution:RelishDog
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "13.0"^^xsd:double,
+     FoodPollution:hasCalories  "350.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:ReubenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "37.0"^^xsd:double,
+     FoodPollution:hasCalories  "680.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:RoastBeefGyro
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "24.0"^^xsd:double,
+     FoodPollution:hasCalories  "550.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:RoastBeefSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "18.0"^^xsd:double,
+     FoodPollution:hasCalories  "140.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:RoastBeefnCheeseSlider
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "14.0"^^xsd:double,
+     FoodPollution:hasCalories  "240.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:RoastTurkeyFarmhouseSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "22.0"^^xsd:double,
+     FoodPollution:hasCalories  "230.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:RoastTurkeySwissSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "38.0"^^xsd:double,
+     FoodPollution:hasCalories  "710.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:RoastTurkeySwissWrap
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "30.0"^^xsd:double,
+     FoodPollution:hasCalories  "520.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:RodeoBurger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "9.0"^^xsd:double,
+     FoodPollution:hasCalories  "310.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:RodeoCrispyChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "12.0"^^xsd:double,
+     FoodPollution:hasCalories  "410.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:RodeoKing
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "60.0"^^xsd:double,
+     FoodPollution:hasCalories  "1250.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:RotisserieStyleChickenCaesarWrap
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "55.0"^^xsd:double,
+     FoodPollution:hasCalories  "730.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:SausagePizza
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "39.0"^^xsd:double,
+     FoodPollution:hasCalories  "820.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:ShreddedChickenBurrito
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "16.0"^^xsd:double,
+     FoodPollution:hasCalories  "400.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:ShreddedChickenMiniQuesadilla
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "12.0"^^xsd:double,
+     FoodPollution:hasCalories  "180.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:SideCaesarSaladwithdressing
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "6.0"^^xsd:double,
+     FoodPollution:hasCalories  "220.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:SideGardenSaladandAvocadoRanchDressing
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "5.0"^^xsd:double,
+     FoodPollution:hasCalories  "230.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:SideSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "1.0"^^xsd:double,
+     FoodPollution:hasCalories  "20.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:SignatureSrirachaBurger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "32.0"^^xsd:double,
+     FoodPollution:hasCalories  "670.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:SingleBaconSmokehouseBurger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "46.0"^^xsd:double,
+     FoodPollution:hasCalories  "840.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:SmallJumboPopcornChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "18.0"^^xsd:double,
+     FoodPollution:hasCalories  "380.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:SmallSpicyJumboPopcornChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "21.0"^^xsd:double,
+     FoodPollution:hasCalories  "350.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:SmokeMountainwBeefShortRib
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "43.0"^^xsd:double,
+     FoodPollution:hasCalories  "740.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:SmokehouseBBQBaconSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "33.0"^^xsd:double,
+     FoodPollution:hasCalories  "500.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: FoodPollution:SmokehouseBeefShortRibSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "26.0"^^xsd:double,
+     FoodPollution:hasCalories  "590.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:SmokehouseBrisket
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "33.0"^^xsd:double,
+     FoodPollution:hasCalories  "600.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:SmotheredBurritoBeef
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "28.0"^^xsd:double,
+     FoodPollution:hasCalories  "710.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:SmotheredBurritoShreddedChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "34.0"^^xsd:double,
+     FoodPollution:hasCalories  "650.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:SmotheredBurritoSteak
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "35.0"^^xsd:double,
+     FoodPollution:hasCalories  "670.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:SoftTacoBeef
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "10.0"^^xsd:double,
+     FoodPollution:hasCalories  "200.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:SoftTacoSupremeBeef
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "10.0"^^xsd:double,
+     FoodPollution:hasCalories  "230.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:SonicBaconCheeseburgerwmayo
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "39.0"^^xsd:double,
+     FoodPollution:hasCalories  "870.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:SonicBurgerWKetchup
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "32.0"^^xsd:double,
+     FoodPollution:hasCalories  "650.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:SonicBurgerWMayonnaise
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "31.0"^^xsd:double,
+     FoodPollution:hasCalories  "740.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:SonicBurgerWMustard
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "31.0"^^xsd:double,
+     FoodPollution:hasCalories  "640.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:SonicCheeseburgerWKetchup
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "35.0"^^xsd:double,
+     FoodPollution:hasCalories  "720.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:SonicCheeseburgerWMayonnaise
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "35.0"^^xsd:double,
+     FoodPollution:hasCalories  "800.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:SonicCheeseburgerWMustard
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "35.0"^^xsd:double,
+     FoodPollution:hasCalories  "710.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:SourdoughChickenClub
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "32.0"^^xsd:double,
+     FoodPollution:hasCalories  "840.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:SourdoughKingDouble
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "55.0"^^xsd:double,
+     FoodPollution:hasCalories  "970.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:SourdoughKingSingle
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "35.0"^^xsd:double,
+     FoodPollution:hasCalories  "730.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:SpicyChickenCrunchwrapSlider
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "15.0"^^xsd:double,
+     FoodPollution:hasCalories  "400.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:SpicyChickenNuggets
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "20.0"^^xsd:double,
+     FoodPollution:hasCalories  "530.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:SpicyChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "29.0"^^xsd:double,
+     FoodPollution:hasCalories  "450.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: FoodPollution:SpicyCrispyChickenJr
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "12.0"^^xsd:double,
+     FoodPollution:hasCalories  "410.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:SpicyCrispyChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "25.0"^^xsd:double,
+     FoodPollution:hasCalories  "700.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:SpicyCrispyJalapenoChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "32.0"^^xsd:double,
+     FoodPollution:hasCalories  "760.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:SpicyDeluxe
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "34.0"^^xsd:double,
+     FoodPollution:hasCalories  "540.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: FoodPollution:SpicyDoubleChalupa
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "21.0"^^xsd:double,
+     FoodPollution:hasCalories  "600.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:SpicyGrilledChickenSubSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "33.0"^^xsd:double,
+     FoodPollution:hasCalories  "430.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Chick Fil-A"
+    
+    
+Individual: FoodPollution:SpicyItalianSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "15.0"^^xsd:double,
+     FoodPollution:hasCalories  "310.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:SpicyPotatoSoftTaco
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "6.0"^^xsd:double,
+     FoodPollution:hasCalories  "250.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:SpicySweetDoubleStackedTaco
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "12.0"^^xsd:double,
+     FoodPollution:hasCalories  "340.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:SpicyTostada
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "7.0"^^xsd:double,
+     FoodPollution:hasCalories  "200.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:SpicyTripleDoubleCrunchwrap
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "23.0"^^xsd:double,
+     FoodPollution:hasCalories  "780.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:Stacker
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "18.0"^^xsd:double,
+     FoodPollution:hasCalories  "390.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:SteakCheeseSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "20.0"^^xsd:double,
+     FoodPollution:hasCalories  "210.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:SteakCrunchyCheesyCoreBurrito
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "25.0"^^xsd:double,
+     FoodPollution:hasCalories  "610.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:SteakFingerBasket
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "23.0"^^xsd:double,
+     FoodPollution:hasCalories  "910.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:SteakQuesadilla
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "25.0"^^xsd:double,
+     FoodPollution:hasCalories  "520.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:SteakQuesalupa
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "22.0"^^xsd:double,
+     FoodPollution:hasCalories  "440.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:SteakQuesarito
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "25.0"^^xsd:double,
+     FoodPollution:hasCalories  "630.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:SteakSpicyCheesyCoreBurrito
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "24.0"^^xsd:double,
+     FoodPollution:hasCalories  "550.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:SteakhouseKing
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "50.0"^^xsd:double,
+     FoodPollution:hasCalories  "1100.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:SubwayClubSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "17.0"^^xsd:double,
+     FoodPollution:hasCalories  "140.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:SubwayMeltSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "18.0"^^xsd:double,
+     FoodPollution:hasCalories  "200.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:SuperGreekSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "22.0"^^xsd:double,
+     FoodPollution:hasCalories  "720.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:SuperRoastBeef
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "23.0"^^xsd:double,
+     FoodPollution:hasCalories  "430.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:SuperSonicBaconDoubleCheeseburgerwmayo
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "67.0"^^xsd:double,
+     FoodPollution:hasCalories  "1280.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:SuperSonicDoubleCheeseburgerWKetchup
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "63.0"^^xsd:double,
+     FoodPollution:hasCalories  "1130.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:SuperSonicDoubleCheeseburgerWMayo
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "63.0"^^xsd:double,
+     FoodPollution:hasCalories  "1220.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:SuperSonicDoubleCheeseburgerWMustard
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "63.0"^^xsd:double,
+     FoodPollution:hasCalories  "1120.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:SuperSonicJalapenoDoubleCheeseburger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "63.0"^^xsd:double,
+     FoodPollution:hasCalories  "1120.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:SweetBBQBacon14lbBurger
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "38.0"^^xsd:double,
+     FoodPollution:hasCalories  "690.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Mcdonalds"
+    
+    
+Individual: FoodPollution:SweetOnionChickenTeriyakiSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "20.0"^^xsd:double,
+     FoodPollution:hasCalories  "200.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:TheOriginalPretzelDog
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "11.0"^^xsd:double,
+     FoodPollution:hasCalories  "320.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:ThreeCheeseSteakSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "30.0"^^xsd:double,
+     FoodPollution:hasCalories  "650.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:Tofu
+
+    Types: 
+        FoodPollution:vegan
+    
+    Facts:  
+     FoodPollution:CO2perGram  "3.0"^^xsd:double
+    
+    
+Individual: FoodPollution:TraditionalUltimateChickenSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "32.0"^^xsd:double,
+     FoodPollution:hasCalories  "730.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:TripleDeckerSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "62.0"^^xsd:double,
+     FoodPollution:hasCalories  "1030.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:TripleLayerNachos
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "7.0"^^xsd:double,
+     FoodPollution:hasCalories  "320.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:TripleMeltBurrito
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "15.0"^^xsd:double,
+     FoodPollution:hasCalories  "410.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:TripleMeltNachos
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "10.0"^^xsd:double,
+     FoodPollution:hasCalories  "260.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:TunaSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "15.0"^^xsd:double,
+     FoodPollution:hasCalories  "310.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:TurkeyAvocadoClub
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "41.0"^^xsd:double,
+     FoodPollution:hasCalories  "730.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:TurkeyBLTSandwich
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "30.0"^^xsd:double,
+     FoodPollution:hasCalories  "550.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Dairy Queen"
+    
+    
+Individual: FoodPollution:TurkeyBreastHamSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "12.0"^^xsd:double,
+     FoodPollution:hasCalories  "110.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:TurkeyBreastSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "12.0"^^xsd:double,
+     FoodPollution:hasCalories  "110.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:TurkeyGyro
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "25.0"^^xsd:double,
+     FoodPollution:hasCalories  "470.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:TurkeynCheeseSlider
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "14.0"^^xsd:double,
+     FoodPollution:hasCalories  "200.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:UltimateBLT
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "43.0"^^xsd:double,
+     FoodPollution:hasCalories  "980.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Arbys"
+    
+    
+Individual: FoodPollution:UltimateChickenClub
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "39.0"^^xsd:double,
+     FoodPollution:hasCalories  "100.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:VeggieBurgerWKetchup
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isPlantBased  FoodPollution:Tofu,
+     FoodPollution:GramsOfProtein  "15.0"^^xsd:double,
+     FoodPollution:hasCalories  "450.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:VeggieBurgerWMustard
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isPlantBased  FoodPollution:Tofu,
+     FoodPollution:GramsOfProtein  "15.0"^^xsd:double,
+     FoodPollution:hasCalories  "450.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:VeggieBurgerWithMustard
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isPlantBased  FoodPollution:Tofu,
+     FoodPollution:GramsOfProtein  "15.0"^^xsd:double,
+     FoodPollution:hasCalories  "450.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Sonic"
+    
+    
+Individual: FoodPollution:VeggieDeliteSalad
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isPlantBased  FoodPollution:Tofu,
+     FoodPollution:GramsOfProtein  "3.0"^^xsd:double,
+     FoodPollution:hasCalories  "50.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Subway"
+    
+    
+Individual: FoodPollution:WHOPPERJRwCheese
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "16.0"^^xsd:double,
+     FoodPollution:hasCalories  "380.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:WHOPPERJRwoCheese
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "14.0"^^xsd:double,
+     FoodPollution:hasCalories  "340.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:WHOPPERwCheese
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "33.0"^^xsd:double,
+     FoodPollution:hasCalories  "760.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:WHOPPERwoCheese
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "28.0"^^xsd:double,
+     FoodPollution:hasCalories  "660.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Burger King"
+    
+    
+Individual: FoodPollution:WildNakedChickenChalupa
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "19.0"^^xsd:double,
+     FoodPollution:hasCalories  "420.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:XXLGrilledStuftBurritoBeef
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "31.0"^^xsd:double,
+     FoodPollution:hasCalories  "880.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:XXLGrilledStuftBurritoChicken
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:PoultryMeat,
+     FoodPollution:GramsOfProtein  "37.0"^^xsd:double,
+     FoodPollution:hasCalories  "830.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
+Individual: FoodPollution:XXLGrilledStuftBurritoSteak
+
+    Types: 
+        FoodPollution:Meal
+    
+    Facts:  
+     FoodPollution:isMeatBased  FoodPollution:Beef,
+     FoodPollution:GramsOfProtein  "33.0"^^xsd:double,
+     FoodPollution:hasCalories  "820.0"^^xsd:double,
+     FoodPollution:isFromRestaurant  "Taco Bell"
+    
+    
