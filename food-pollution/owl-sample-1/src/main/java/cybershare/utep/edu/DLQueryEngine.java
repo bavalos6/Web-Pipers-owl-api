@@ -1,6 +1,3 @@
-package cybershare.utep.edu;
-
-
 /*
  * This file is part of the OWL API.
  *
@@ -39,17 +36,11 @@ package cybershare.utep.edu;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-//import org.semanticweb.HermiT.Reasoner;
 
-import java.io.IOException;
-import java.io.InputStream;
+package cybershare.utep.edu;
+
 import java.util.Collections;
 import java.util.Set;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.List;
-import java.io.File;
 
 import org.coode.owlapi.manchesterowlsyntax.ManchesterOWLSyntaxEditorParser;
 import org.semanticweb.owlapi.apibinding.OWLManager;
@@ -63,7 +54,6 @@ import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLEntity;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLOntology;
-import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.reasoner.Node;
 import org.semanticweb.owlapi.reasoner.NodeSet;
@@ -71,27 +61,11 @@ import org.semanticweb.owlapi.reasoner.OWLReasoner;
 import org.semanticweb.owlapi.util.BidirectionalShortFormProvider;
 import org.semanticweb.owlapi.util.BidirectionalShortFormProviderAdapter;
 import org.semanticweb.owlapi.util.ShortFormProvider;
-import org.semanticweb.owlapi.util.SimpleShortFormProvider;
-
-import org.semanticweb.HermiT.Configuration;
-import org.semanticweb.HermiT.Reasoner;
-import org.semanticweb.HermiT.Reasoner.ReasonerFactory;
-import org.semanticweb.owlapi.model.OWLAxiom;
-import org.semanticweb.owlapi.model.OWLDisjointClassesAxiom;
-import org.semanticweb.owlapi.reasoner.ConsoleProgressMonitor;
-import org.semanticweb.owlapi.reasoner.InferenceType;
-import org.semanticweb.owlapi.util.InferredAxiomGenerator;
-import org.semanticweb.owlapi.util.InferredClassAssertionAxiomGenerator;
-import org.semanticweb.owlapi.util.InferredDisjointClassesAxiomGenerator;
-import org.semanticweb.owlapi.util.InferredOntologyGenerator;
-import org.semanticweb.owlapi.util.InferredSubClassAxiomGenerator;
-import org.semanticweb.owlapi.model.OWLOntologyStorageException;
-import org.semanticweb.owlapi.model.OWLDataProperty;
-import org.semanticweb.owlapi.model.OWLLiteral;
 
 
-/** This example shows how to perform a "dlquery". The DLQuery view/tab in
- * Protege 4 works like this. */
+/** 
+ * This example shows how to perform a "dlquery". The DLQuery view/tab in
+*/
 class DLQueryEngine {
     private final OWLReasoner reasoner;
     private final DLQueryParser parser;
@@ -196,17 +170,12 @@ class DLQueryEngine {
                 direct);
         return individuals.getFlattened();
     }
-
-    ///EDDIE: I CREATED THIS METHOD TO TAKE IN A CLASS EXPRESSION AND GET THE INSTANCES OF THAT CLASS EXPRESSION.
-    ///EDDIE: YOU WILL HAVE TO IMPLEMENT THIS ON YOUR OWN AND MAKE IT LOOK DIFFERENT THAN MINE.
-    ///EDDIE: YOU ALSO DONT HAVE TO DO GETINSTANCES, YOU CAN DO GETSUPERCLASSES OR GETSUBCLASSES OR GETEQUIVALENTCLASSES
     public Set<OWLNamedIndividual> getQueryResults(String classExpression) {
         Set<OWLNamedIndividual> individuals = getInstances(classExpression, true);
         return individuals;
     }
 }
 
-///EDDIE: THIS CODE IS FROM THE GITHUB REPO I SENT YOU FOR DLQUERY ENGINE. YOU CAN LEAVE ALL OF IT THE SAME
 class DLQueryParser {
     private final OWLOntology rootOntology;
     private final BidirectionalShortFormProvider bidiShortFormProvider;
@@ -224,9 +193,6 @@ class DLQueryParser {
         this.rootOntology = rootOntology;
         OWLOntologyManager manager = rootOntology.getOWLOntologyManager();
         Set<OWLOntology> importsClosure = rootOntology.getImportsClosure();
-        // Create a bidirectional short form provider to do the actual mapping.
-        // It will generate names using the input
-        // short form provider.
         bidiShortFormProvider = new BidirectionalShortFormProviderAdapter(manager,
                 importsClosure, shortFormProvider);
     }
@@ -247,11 +213,8 @@ class DLQueryParser {
         ManchesterOWLSyntaxEditorParser parser = new ManchesterOWLSyntaxEditorParser(
                 dataFactory, classExpressionString);
         parser.setDefaultOntology(rootOntology);
-        // Specify an entity checker that wil be used to check a class
-        // expression contains the correct names.
         OWLEntityChecker entityChecker = new ShortFormEntityChecker(bidiShortFormProvider);
         parser.setOWLEntityChecker(entityChecker);
-        // Do the actual parsing
         return parser.parseClassExpression();
     }
 }
