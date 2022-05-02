@@ -40,23 +40,30 @@ package cybershare.utep.edu;
  * limitations under the License.
  */
 //import org.semanticweb.HermiT.Reasoner;
-import java.io.BufferedReader;
+
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.Collections;
 import java.util.Set;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.io.File;
 
 import org.coode.owlapi.manchesterowlsyntax.ManchesterOWLSyntaxEditorParser;
+import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.expression.OWLEntityChecker;
 import org.semanticweb.owlapi.expression.ParserException;
 import org.semanticweb.owlapi.expression.ShortFormEntityChecker;
+import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLEntity;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLOntology;
+import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.reasoner.Node;
 import org.semanticweb.owlapi.reasoner.NodeSet;
@@ -65,14 +72,109 @@ import org.semanticweb.owlapi.util.BidirectionalShortFormProvider;
 import org.semanticweb.owlapi.util.BidirectionalShortFormProviderAdapter;
 import org.semanticweb.owlapi.util.ShortFormProvider;
 import org.semanticweb.owlapi.util.SimpleShortFormProvider;
-import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
-import org.semanticweb.owlapi.reasoner.structural.StructuralReasonerFactory;
 
+import org.semanticweb.HermiT.Configuration;
+import org.semanticweb.HermiT.Reasoner;
+import org.semanticweb.HermiT.Reasoner.ReasonerFactory;
+import org.semanticweb.owlapi.model.OWLAxiom;
+import org.semanticweb.owlapi.model.OWLDisjointClassesAxiom;
+import org.semanticweb.owlapi.reasoner.ConsoleProgressMonitor;
+import org.semanticweb.owlapi.reasoner.InferenceType;
+import org.semanticweb.owlapi.util.InferredAxiomGenerator;
+import org.semanticweb.owlapi.util.InferredClassAssertionAxiomGenerator;
+import org.semanticweb.owlapi.util.InferredDisjointClassesAxiomGenerator;
+import org.semanticweb.owlapi.util.InferredOntologyGenerator;
+import org.semanticweb.owlapi.util.InferredSubClassAxiomGenerator;
+import org.semanticweb.owlapi.model.OWLOntologyStorageException;
+import org.semanticweb.owlapi.model.OWLDataProperty;
+import org.semanticweb.owlapi.model.OWLLiteral;
 
 
 /** This example shows how to perform a "dlquery". The DLQuery view/tab in
  * Protege 4 works like this. */
-public class DLQueryEngine {
+class DLQueryEngine {
+    private final OWLReasoner reasoner;
+    private final DLQueryParser parser;
+
+    /** Constructs a DLQueryEngine. This will answer "DL queries" using the
+     * specified reasoner. A short form provider specifies how entities are
+     * rendered.
+     * 
+     * @param reasoner
+     *            The reasoner to be used for answering the queries.
+     * @param shortFormProvider
+     *            A short form provider. */
+    public DLQueryEngine(OWLReasoner reasoner, ShortFormProvider shortFormProvider) {
+        this.reasoner = reasoner;
+        OWLOntology rootOntology = reasoner.getRootOntology();
+        parser = new DLQueryParser(rootOntology, shortFormProvider);
+    }
+
+    /** Gets the superclasses of a class expression parsed from a string.
+     * 
+     * @param classExpressionString
+     *            The string from which the class expression will be parsed.
+     * @param direct
+     *            Specifies whether direct superclasses should be returned or
+     *            not.
+     * @return The superclasses of the specified class expression
+     * @throws ParserException
+     *             If there was a problem parsing the class expression. */
+    public Set<OWLClass> getSuperClasses(String classExpressionString, boolean direct)
+            throws ParserException {
+        if (classExpressionString.trim().length() == 0) {
+            return Collections.emptySet();
+        }
+        OWLClassExpression classExpression = parser
+                .parseClassExpression(classExpressionString);
+        NodeSet<OWLClass> superClasses = reasoner
+                .getSuperClasses(classExpression, direct);
+        return superClasses.getFlattened();
+    }
+
+    /** Gets the equivalent classes of a class expression parsed from a string.
+     * 
+     * @param classExpressionString
+     *            The string from which the class expression will be parsed.
+     * @return The equivalent classes of the specified class expression
+     * @throws ParserException
+     *             If there was a problem parsing the class expression. */
+    public Set<OWLClass> getEquivalentClasses(String classExpressionString)
+            throws ParserException {
+        if (classExpressionString.trim().length() == 0) {
+            return Collections.emptySet();
+        }
+        OWLClassExpression classExpression = parser
+                .parseClassExpression(classExpressionString);
+        Node<OWLClass> equivalentClasses = reasoner.getEquivalentClasses(classExpression);
+        Set<OWLClass> result;
+        if (classExpression.isAnonymous()) {
+            result = equivalentClasses.getEntities();
+        } else {
+            result = equivalentClasses.getEntitiesMinus(classExpression.asOWLClass());
+        }
+        return result;
+    }
+
+    /** Gets the subclasses of a class expression parsed from a string.
+     * 
+     * @param classExpressionString
+     *            The string from which the class expression will be parsed.
+     * @param direct
+     *            Specifies whether direct subclasses should be returned or not.
+     * @return The subclasses of the specified class expression
+     * @throws ParserException
+     *             If there was a problem parsing the class expression. */
+    public Set<OWLClass> getSubClasses(String classExpressionString, boolean direct)
+            throws ParserException {
+        if (classExpressionString.trim().length() == 0) {
+            return Collections.emptySet();
+        }
+        OWLClassExpression classExpression = parser
+                .parseClassExpression(classExpressionString);
+        NodeSet<OWLClass> subClasses = reasoner.getSubClasses(classExpression, direct);
+        return subClasses.getFlattened();
+    }
 
     /** Gets the instances of a class expression parsed from a string.
      * 
@@ -83,32 +185,28 @@ public class DLQueryEngine {
      * @return The instances of the specified class expression
      * @throws ParserException
      *             If there was a problem parsing the class expression. */
-    public static Set<OWLNamedIndividual> getInstances(String classExpressionString, OWLOntology ontology) throws ParserException {
-        OWLReasoner reasoner = createReasoner(ontology);
-        ShortFormProvider shortFormProvider = new SimpleShortFormProvider();
-        OWLOntology rootOntology = reasoner.getRootOntology();
-        DLQueryParser parser = new DLQueryParser(rootOntology, shortFormProvider);
-
+    public Set<OWLNamedIndividual> getInstances(String classExpressionString,
+            boolean direct) throws ParserException {
         if (classExpressionString.trim().length() == 0) {
             return Collections.emptySet();
         }
-
-        OWLClassExpression classExpression = parser.parseClassExpression(classExpressionString);
-        NodeSet<OWLNamedIndividual> individuals = reasoner.getInstances(classExpression);
+        OWLClassExpression classExpression = parser
+                .parseClassExpression(classExpressionString);
+        NodeSet<OWLNamedIndividual> individuals = reasoner.getInstances(classExpression,
+                direct);
         return individuals.getFlattened();
     }
 
-    public static OWLReasoner createReasoner(final OWLOntology rootOntology) {
-        // We need to create an instance of OWLReasoner. An OWLReasoner provides
-        // the basic query functionality that we need, for example the ability
-        // obtain the subclasses of a class etc. To do this we use a reasoner
-        // factory.
-        // Create a reasoner factory.
-        OWLReasonerFactory reasonerFactory = new StructuralReasonerFactory();
-        return reasonerFactory.createReasoner(rootOntology);
+    ///EDDIE: I CREATED THIS METHOD TO TAKE IN A CLASS EXPRESSION AND GET THE INSTANCES OF THAT CLASS EXPRESSION.
+    ///EDDIE: YOU WILL HAVE TO IMPLEMENT THIS ON YOUR OWN AND MAKE IT LOOK DIFFERENT THAN MINE.
+    ///EDDIE: YOU ALSO DONT HAVE TO DO GETINSTANCES, YOU CAN DO GETSUPERCLASSES OR GETSUBCLASSES OR GETEQUIVALENTCLASSES
+    public Set<OWLNamedIndividual> getQueryResults(String classExpression) {
+        Set<OWLNamedIndividual> individuals = getInstances(classExpression, true);
+        return individuals;
     }
 }
 
+///EDDIE: THIS CODE IS FROM THE GITHUB REPO I SENT YOU FOR DLQUERY ENGINE. YOU CAN LEAVE ALL OF IT THE SAME
 class DLQueryParser {
     private final OWLOntology rootOntology;
     private final BidirectionalShortFormProvider bidiShortFormProvider;

@@ -13,6 +13,7 @@ public class Foods {
     private ArrayList<Food> foods;
 
     public Foods() {
+        // Testing purposes 
         this.foods = new ArrayList<>();
         this.foods.add(new Food());
         this.foods.add(new Food());
@@ -20,11 +21,11 @@ public class Foods {
         this.foods.add(new Food());
     }
 
-    public Foods(Set<OWLNamedIndividual> foods, OWLOntology ontology, 
-                    OWLDataFactory dataFactory, Reasoner reasoner) {
+    public Foods(Set<OWLNamedIndividual> foodQuery, OWLOntology ontology,
+            OWLDataFactory dataFactory, Reasoner reasoner) {
         System.out.println(foods);
-        this.foods = new ArrayList<>();
-        foods.stream().forEach(food -> this.foods.add(setFood(food, dataFactory, reasoner)));
+        this.foods = foodQuery.stream().collect(
+                Collectors.mapping(foodq -> setFood(foodq, dataFactory, reasoner), Collectors.toCollection(ArrayList::new)));
     }
 
     public ArrayList<Food> getFoods() {

@@ -193,7 +193,17 @@ public class MyFirstOWLAPIProgram {
             configuration.reasonerProgressMonitor = new ConsoleProgressMonitor();
 
             Reasoner reasoner = new Reasoner(configuration, ontology);
-            OWLClassExpression value = dataFactory.getOWLClass(getExpression("foodQuery")); 
+            OWLClassExpression value = dataFactory.getOWLClass(getExpression("foodQuery"));
+            SimpleShortFormProvider simpleShortFormProvider = new SimpleShortFormProvider(); 
+            DLQueryEngine dlQueryEngine = new DLQueryEngine(reasoner, simpleShortFormProvider);
+            
+            String classExpression = "Meal and isBased some Food";
+            Set<OWLNamedIndividual> individuals = dlQueryEngine.getQueryResults(classExpression.trim());
+            
+            System.out.println("Potential Query");
+            System.out.println(individuals);
+            System.out.println("---------------");
+
             System.out.println("Class value looks like this: ");
             System.out.println(value.toString());
             Set<OWLNamedIndividual> meals = reasoner.getInstances(value).entities().collect(Collectors.toSet());
@@ -235,7 +245,7 @@ public class MyFirstOWLAPIProgram {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        String b = "Meal-and-isBased some Food"; 
         System.out.println("Running Application!!");
         SpringApplication.run(MyFirstOWLAPIProgram.class, args);
     }
